@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>南米畜産ニュース - アーカイブ</title>
+  <style>
+    :root {
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(0,0,0,0.10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background: #f0f2f5; color: #1a1a2e; line-height: 1.7; font-size: 15px; }
+    header {
+      background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #1565c0 100%);
+      color: white; padding: 28px 24px 24px; text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    header h1 { font-size: clamp(20px, 4vw, 32px); font-weight: 700; margin-bottom: 6px; }
+    .header-sub { font-size: 14px; opacity: 0.85; }
+    main { max-width: 700px; margin: 32px auto; padding: 0 16px 40px; }
+    .section-title { font-size: 18px; font-weight: 700; color: #1a237e; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #c5cae9; }
+    .latest-btn {
+      display: block; background: linear-gradient(135deg, #1a237e, #1565c0);
+      color: white; text-align: center; padding: 16px; border-radius: var(--radius);
+      font-size: 17px; font-weight: 700; margin-bottom: 32px;
+      box-shadow: var(--shadow); text-decoration: none;
+    }
+    .latest-btn:hover { opacity: 0.9; text-decoration: none; }
+    .archive-list { background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .archive-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 20px; border-bottom: 1px solid #f0f0f0;
+      color: #1a1a2e; text-decoration: none; transition: background 0.15s;
+    }
+    .archive-item:last-child { border-bottom: none; }
+    .archive-item:hover { background: #e8eaf6; text-decoration: none; }
+    .archive-date { font-size: 15px; font-weight: 600; }
+    .archive-arrow { color: #1565c0; font-size: 18px; }
+    footer { text-align: center; padding: 20px; font-size: 12px; color: #888; border-top: 1px solid #e0e0e0; background: white; margin-top: 32px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>南米畜産ニュース</h1>
+    <div class="header-sub">ブラジル・アルゼンチン・チリ・ウルグアイ</div>
+  </header>
+  <main>
+    <p class="section-title">最新ニュース</p>
+    <a href="2026-04-29.html" class="latest-btn">最新: 2026年04月29日 のニュースを見る →</a>
+    <p class="section-title">アーカイブ</p>
+    <div class="archive-list">
+        <a href="2026-04-29.html" class="archive-item">
+            <span class="archive-date">2026年04月29日</span>
+            <span class="archive-arrow">→</span>
+        </a>
+        <a href="2026-04-02.html" class="archive-item">
+            <span class="archive-date">2026年04月02日</span>
+            <span class="archive-arrow">→</span>
+        </a></div>
+  </main>
+  <footer>南米畜産ニュース自動収集システム / DeepL API による日本語翻訳</footer>
+</body>
+</html>

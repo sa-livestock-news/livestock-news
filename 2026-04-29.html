@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>南米畜産ニュース 2026年04月29日</title>
+  <style>
+    :root {
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(0,0,0,0.10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background: #f0f2f5; color: #1a1a2e; line-height: 1.7; font-size: 15px; }
+    a { color: #1565c0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #1565c0 100%);
+      color: white; padding: 28px 24px 24px; text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    header h1 { font-size: clamp(20px, 4vw, 32px); font-weight: 700; margin-bottom: 6px; }
+    .header-sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+    .header-stats { display: flex; justify-content: center; gap: 20px; margin-top: 14px; flex-wrap: wrap; }
+    .stat-badge {
+      background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 20px; padding: 5px 14px; font-size: 13px; font-weight: 600;
+    }
+    .toc {
+      background: white; padding: 14px 20px; display: flex; gap: 10px;
+      flex-wrap: wrap; align-items: center; border-bottom: 1px solid #e0e0e0;
+      position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .toc-label { font-size: 12px; color: #666; font-weight: 600; }
+    .toc-item {
+      background: #e8eaf6; color: #283593; border-radius: 16px;
+      padding: 4px 12px; font-size: 13px; font-weight: 600;
+    }
+    .toc-item:hover { background: #c5cae9; text-decoration: none; }
+    .toc-archive {
+      margin-left: auto; background: #e8f5e9; color: #2e7d32;
+      border-radius: 16px; padding: 4px 12px; font-size: 13px; font-weight: 600;
+    }
+    .toc-archive:hover { background: #c8e6c9; text-decoration: none; }
+    main { max-width: 1100px; margin: 24px auto; padding: 0 16px 40px; }
+    .country-section { margin-bottom: 32px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .country-header { display: flex; align-items: center; gap: 12px; padding: 14px 20px; color: white; font-weight: 700; }
+    .country-flag { font-size: 28px; line-height: 1; }
+    .country-name { font-size: 20px; flex: 1; }
+    .country-count { background: rgba(255,255,255,0.25); border-radius: 12px; padding: 2px 10px; font-size: 13px; }
+    .country-body { padding: 16px; border: 1px solid; border-top: none; }
+    .article-card {
+      background: white; border-radius: var(--radius); padding: 20px;
+      margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); position: relative;
+    }
+    .article-card:last-child { margin-bottom: 0; }
+    .article-num {
+      position: absolute; top: 12px; right: 14px; background: #1a237e; color: white;
+      border-radius: 50%; width: 28px; height: 28px; display: flex;
+      align-items: center; justify-content: center; font-size: 12px; font-weight: 700;
+    }
+    .article-source-badge {
+      display: inline-block; background: #e8eaf6; color: #283593;
+      border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 700; margin-bottom: 8px;
+    }
+    .article-title-ja {
+      font-size: 17px; font-weight: 700; color: #1a237e; margin-bottom: 6px;
+      line-height: 1.5; cursor: pointer;
+    }
+    .article-title-ja:hover { color: #1565c0; text-decoration: underline; }
+    .article-title-orig { font-size: 13px; font-weight: 400; color: #555; margin-bottom: 10px; }
+    .article-title-orig a { color: #1565c0; }
+    .article-meta {
+      display: flex; gap: 14px; flex-wrap: wrap;
+      font-size: 12px; color: #666; margin-bottom: 10px;
+    }
+    .meta-link { color: #1565c0 !important; font-weight: 600; }
+    .meta-fulltext {
+      color: #e65100 !important; font-weight: 600; cursor: pointer;
+      border: 1px solid #ffcc80; border-radius: 10px; padding: 1px 8px;
+      background: #fff3e0;
+    }
+    .meta-fulltext:hover { background: #ffe0b2; }
+    .keywords { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+    .keyword {
+      background: #fff3e0; color: #e65100; border: 1px solid #ffcc80;
+      border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 600;
+    }
+    .article-body-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 4px; }
+    @media (max-width: 640px) { .article-body-grid { grid-template-columns: 1fr; } }
+    .body-col { background: #fafafa; border-radius: 6px; padding: 12px; border: 1px solid #e8e8e8; }
+    .body-label { font-size: 11px; font-weight: 700; color: #888; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .body-text { font-size: 13px; line-height: 1.7; color: #333; }
+    .body-text.ja { color: #1a1a2e; }
+    .back-link { margin-top: 12px; font-size: 13px; }
+    footer {
+      text-align: center; padding: 20px; font-size: 12px; color: #888;
+      border-top: 1px solid #e0e0e0; background: white; margin-top: 32px;
+    }
+
+    /* モーダル */
+    .modal {
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6); z-index: 1000; overflow-y: auto;
+      padding: 20px;
+    }
+    .modal.active { display: flex; align-items: flex-start; justify-content: center; }
+    .modal-content {
+      background: white; border-radius: 12px; padding: 28px;
+      max-width: 800px; width: 100%; margin: 20px auto;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3); position: relative;
+    }
+    .modal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 16px; }
+    .modal-title { font-size: 20px; font-weight: 700; color: #1a237e; line-height: 1.5; flex: 1; }
+    .modal-close {
+      background: #f5f5f5; border: none; border-radius: 50%; width: 32px; height: 32px;
+      font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; color: #555;
+    }
+    .modal-close:hover { background: #e0e0e0; }
+    .modal-meta { display: flex; gap: 14px; font-size: 13px; color: #666; margin-bottom: 20px; flex-wrap: wrap; }
+    .modal-meta a { color: #1565c0; font-weight: 600; }
+    .modal-section-label { font-size: 11px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .modal-body { background: #f0f4ff; border-radius: 8px; padding: 16px; margin-bottom: 16px; border-left: 4px solid #1565c0; }
+    .modal-orig { background: #fafafa; border-radius: 8px; padding: 16px; border: 1px solid #e8e8e8; }
+    .modal-text { font-size: 14px; line-height: 1.8; color: #1a1a2e; white-space: pre-wrap; }
+    .modal-text.orig { color: #555; }
+
+    @media print {
+      .toc { display: none; }
+      .article-card { break-inside: avoid; }
+      body { background: white; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>南米畜産ニュース</h1>
+    <div class="header-sub">2026年04月29日（ブラジル・アルゼンチン・チリ・ウルグアイ）</div>
+    <div class="header-stats">
+      <div class="stat-badge">6件の記事</div>
+      <div class="stat-badge">DeepL APIによる日本語翻訳</div>
+      
+    </div>
+  </header>
+  <nav class="toc">
+    <span class="toc-label">国別ジャンプ:</span>
+    <a href="#country-ブラジル" class="toc-item">ブラジル (1件)</a><a href="#country-アルゼンチン" class="toc-item">アルゼンチン (5件)</a><a href="#country-ウルグアイ" class="toc-item">ウルグアイ (0件)</a><a href="#country-チリ" class="toc-item">チリ (0件)</a>
+    <a href="index.html" class="toc-archive">アーカイブ一覧</a>
+  </nav>
+  <main>
+    
+    <section class="country-section" id="country-ブラジル">
+      <div class="country-header" style="background-color: #009C3B">
+        <span class="country-flag">🇧🇷</span>
+        <span class="country-name">ブラジル</span>
+        <span class="country-count">1件</span>
+      </div>
+      <div class="country-body" style="background-color: #e8f5e9; border-color: #4CAF50">
+        
+        <div class="article-card">
+          <div class="article-num">#1</div>
+          <div class="article-source-badge">Google News BR（畜産）</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-1')" title="クリックで全文和訳を表示">Agrishow 2026：農業部門の借入額が過去最高を記録、高金利と生産コストの圧力が浮き彫りに - Times Brasil | CNBC</h3>
+          <h4 class="article-title-orig">
+            <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxPV3RkU0t4SkVQV1hPaV9NQV9WNzdzaFE4U3VCaElVQVd6aUJzS0Z5UXFWV0ttNmhWLWlsb1ZSSldGQUNOaHo2LURTS2dlMzFaeHU5dlIwX0hpUWVncHVsWFVIRkRScExMbzU3S01DZVM5TWFHWjAzYWVXTmU4VkswVXh4ZkpJdWQzWUtrR2tKTDZ4b3J4dTVzMlUwUHFCY1lyVFAyOU13VWRrYWE2cTRTWGVGTU9SWnFTRGlTZEVrd1hPM0NBa1E" target="_blank" rel="noopener">Agrishow 2026: endividamento recorde no agro expõe pressão de juros altos e custo de produção - Times Brasil | CNBC</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/04/29</span>
+            <span class="meta-source">Google News BR（畜産）</span>
+            <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxPV3RkU0t4SkVQV1hPaV9NQV9WNzdzaFE4U3VCaElVQVd6aUJzS0Z5UXFWV0ttNmhWLWlsb1ZSSldGQUNOaHo2LURTS2dlMzFaeHU5dlIwX0hpUWVncHVsWFVIRkRScExMbzU3S01DZVM5TWFHWjAzYWVXTmU4VkswVXh4ZkpJdWQzWUtrR2tKTDZ4b3J4dTVzMlUwUHFCY1lyVFAyOU13VWRrYWE2cTRTWGVGTU9SWnFTRGlTZEVrd1hPM0NBa1E" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-1')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">生産</span><span class="keyword">農業</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Agrishow 2026: endividamento recorde no agro expõe pressão de juros altos e custo de produçãoTimes Brasil | CNBC</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">Agrishow 2026：農業部門の借入額が過去最高を記録、高金利と生産コストの圧力が浮き彫りにTimes Brasil | CNBC</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+      </div>
+    </section>
+    <section class="country-section" id="country-アルゼンチン">
+      <div class="country-header" style="background-color: #74ACDF">
+        <span class="country-flag">🇦🇷</span>
+        <span class="country-name">アルゼンチン</span>
+        <span class="country-count">5件</span>
+      </div>
+      <div class="country-body" style="background-color: #e3f2fd; border-color: #2196F3">
+        
+        <div class="article-card">
+          <div class="article-num">#2</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-2')" title="クリックで全文和訳を表示">アズールで開催されたIPCVA主催の「サンセット・ガナデロ」には、200人以上の若者が参加した</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/mas-de-200-jovenes-participaron-en-el-sunset-ganadero-del-ipcva-en-azul" target="_blank" rel="noopener">Más de 200 jóvenes participaron en el Sunset Ganadero del IPCVA en Azul</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/04/29</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/mas-de-200-jovenes-participaron-en-el-sunset-ganadero-del-ipcva-en-azul" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-2')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">牛肉</span><span class="keyword">生産</span><span class="keyword">畜産</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">El Instituto de Promoción de la Carne Vacuna Argentina (IPCVA) organizó un nuevo Sunset Ganadero para jóvenes el 16 de abril en la Sociedad Rural de Azul. El lema fue “Carne argentina: historias que inspiran”, con una propuesta innovadora que integró charlas, experiencias y testimonios sobre la producción, la sanidad, la nutrición y el valor cultural de la carne vacuna. La jornada estuvo especialm...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">アルゼンチン牛肉振興協会（IPCVA）は、4月16日にアズール農村協会にて、若者向けの新たな「サンセット・ガナデロ」イベントを開催した。今回のテーマは「アルゼンチン産牛肉：インスピレーションを与える物語」であり、牛肉の生産、衛生、栄養、そして文化的価値に関する講演、体験談、証言を組み合わせた革新的なプログラムが展開された。 このイベントは、特に畜産業を次世代に身近に感じてもらうことを目的としており、地元の学生や若者たちが多数参加しました。締めくくりは、言うまでもなく、ライブ音楽を伴う親睦のひとときとなり、オジョ・デ・ビフェ、ピカーニャ、リブアイステーキをふんだんに使った豪華なバーベキューショー...</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#3</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-3')" title="クリックで全文和訳を表示">アルゼンチンの米国への商談ミッション</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/mision-comercial-en-ee-uu-para-exportar-mas-carne-vacuna" target="_blank" rel="noopener">Misión comercial argentina a Estados Unidos</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/04/29</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/mision-comercial-en-ee-uu-para-exportar-mas-carne-vacuna" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-3')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">食肉</span><span class="keyword">輸出</span><span class="keyword">輸入</span><span class="keyword">市場</span><span class="keyword">貿易</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">La cadena cárnica argentina puso primera en Estados Unidos con el inicio de una nueva edición de la “Semana de la Carne”, una misión comercial que se extenderá hasta el 1 de mayo y que tendrá escalas en Filadelfia, Chicago y Los Ángeles. El objetivo es consolidar la presencia en tres plazas estratégicas para el comercio cárnico tras la reciente ampliación del cupo de exportación sin aranceles. La ...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">アルゼンチンの食肉業界は、5月1日までフィラデルフィア、シカゴ、ロサンゼルスを巡る商談ミッション「肉週間」の新シリーズを開始し、米国市場での活動を本格化させた。これは、無関税輸出枠が最近拡大されたことを受け、食肉貿易における3つの戦略的拠点での存在感を強固にすることを目的としている。 日程は本日フィラデルフィアから始まり、現地の港湾視察や官民合同の活動が行われる。これには、アルゼンチン駐米大使のアレック・オクセンフォード氏をはじめ、輸出業者や業界関係者が参加する。 また、米国食肉輸入評議会（MICA）のダナ・エーリック会長やフィラポートのショーン・マホーニー・マーケティング部長に加え、米国の輸...</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#4</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-4')" title="クリックで全文和訳を表示">生産者はVISECにどのように登録すればよいですか？</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/informacion-importante" target="_blank" rel="noopener">¿Cómo se deben registrar los productores en el VISEC?</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/04/29</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/informacion-importante" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-4')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">生産</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Siga los pasos para la inscripción: Primero: Ingrese a la dirección: carne.visec.com.ar. Haga clic en el botón: “Registrá su empresa”. El primer paso es elegir el perfil principal de la empresa. En este caso… seleccione: PRODUCTOR.</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">登録の手順に従ってください。まず、URL「carne.visec.com.ar」にアクセスしてください。「Registrá su empresa（会社の登録）」ボタンをクリックしてください。最初のステップは、会社の主なプロファイルを選択することです。この場合…「PRODUCTOR（生産者）」を選択してください。</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#5</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-5')" title="クリックで全文和訳を表示">アルゼンチンの牛肉は、輸出拡大を図るため、米国で「アルゼンチン牛肉週間」を開催する</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/la-carne-argentina-tendra-su-semana-en-estados-unidos-para-impulsar-exportaciones" target="_blank" rel="noopener">La carne Argentina tendrá su semana en Estados Unidos para impulsar exportaciones</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/04/29</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/la-carne-argentina-tendra-su-semana-en-estados-unidos-para-impulsar-exportaciones" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-5')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">牛肉</span><span class="keyword">輸出</span><span class="keyword">市場</span><span class="keyword">農業</span><span class="keyword">貿易</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">La secretaria general de la Presidencia, Karina Milei, encabezó un encuentro de trabajo junto al canciller, Pablo Quirno; el presidente ejecutivo de PromArgentina, Diego Sucalesca; el subsecretario de Mercados Agroalimentarios e Inserción Internacional de la Nación, Agustin Tejeda; y el presidente del Instituto de Promoción de la Carne Vacuna Argentina (IPCVA), Georges Breitschmitt, para anunciar ...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">大統領府事務総長のカリーナ・ミレイ氏は、パブロ・キルノ外相、プロマルティンガのディエゴ・スカーレスカ代表、 国家農業食品市場・国際展開担当次官のアグスティン・テヘダ氏、およびアルゼンチン牛肉振興協会（IPCVA）会長のジョルジュ・ブライシュミット氏と共に実務会議を主宰し、米国における「アルゼンチン牛肉週間」の開催を発表した。これは、輸出を促進し、世界で最も競争の激しい市場の一つにおけるアルゼンチン産牛肉の浸透を深めるための戦略的な貿易ミッションである。 カサ・ロサダで行われたこの会合では、大統領府事務局とアルゼンチン投資・国際貿易促進庁（PromArgentina）が策定した本ミッションの指針...</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#6</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-6')" title="クリックで全文和訳を表示">500名以上の生産者が、IPCVA主催の「Jornada a Campo 2026」第1回イベントに参加した</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/mas-de-500-productores-participaron-de-la-primera-jornada-a-campo-2026-del-ipcva" target="_blank" rel="noopener">Más de 500 productores participaron de la primera Jornada a Campo 2026 del IPCVA</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/04/29</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/mas-de-500-productores-participaron-de-la-primera-jornada-a-campo-2026-del-ipcva" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-6')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">生産</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Más de 500 productores participaron de la primera Jornada a Campo 2026 del IPCVA</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">500名以上の生産者が、IPCVA主催の「Jornada a Campo 2026」第1回イベントに参加した</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+        <div id="modal-1" class="modal" onclick="closeModal('modal-1')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">Agrishow 2026：農業部門の借入額が過去最高を記録、高金利と生産コストの圧力が浮き彫りに - Times Brasil | CNBC</h2>
+              <button class="modal-close" onclick="closeModal('modal-1')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/04/29</span>
+              <span>Google News BR（畜産）</span>
+              <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxPV3RkU0t4SkVQV1hPaV9NQV9WNzdzaFE4U3VCaElVQVd6aUJzS0Z5UXFWV0ttNmhWLWlsb1ZSSldGQUNOaHo2LURTS2dlMzFaeHU5dlIwX0hpUWVncHVsWFVIRkRScExMbzU3S01DZVM5TWFHWjAzYWVXTmU4VkswVXh4ZkpJdWQzWUtrR2tKTDZ4b3J4dTVzMlUwUHFCY1lyVFAyOU13VWRrYWE2cTRTWGVGTU9SWnFTRGlTZEVrd1hPM0NBa1E" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">Agrishow 2026：農業部門の借入額が過去最高を記録、高金利と生産コストの圧力が浮き彫りにTimes Brasil | CNBC</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">Agrishow 2026: endividamento recorde no agro expõe pressão de juros altos e custo de produçãoTimes Brasil | CNBC</p>
+            </div>
+          </div>
+        </div>
+        <div id="modal-2" class="modal" onclick="closeModal('modal-2')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">アズールで開催されたIPCVA主催の「サンセット・ガナデロ」には、200人以上の若者が参加した</h2>
+              <button class="modal-close" onclick="closeModal('modal-2')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/04/29</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/mas-de-200-jovenes-participaron-en-el-sunset-ganadero-del-ipcva-en-azul" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">アルゼンチン牛肉振興協会（IPCVA）は、4月16日にアズール農村協会にて、若者向けの新たな「サンセット・ガナデロ」イベントを開催した。今回のテーマは「アルゼンチン産牛肉：インスピレーションを与える物語」であり、牛肉の生産、衛生、栄養、そして文化的価値に関する講演、体験談、証言を組み合わせた革新的なプログラムが展開された。 このイベントは、特に畜産業を次世代に身近に感じてもらうことを目的としており、地元の学生や若者たちが多数参加しました。締めくくりは、言うまでもなく、ライブ音楽を伴う親睦のひとときとなり、オジョ・デ・ビフェ、ピカーニャ、リブアイステーキをふんだんに使った豪華なバーベキューショーが披露されました。 IPCVAの理事であるフェルナンド・エルナンデス氏は、「サンセット・ガナデロ」の席上、「多くの若者が参加していることを強調することは非常に重要であり、我々は彼らをターゲットにすべきだ」と述べた。「若者層と牛肉の消費は当研究所の目的の一部であり、このようなイベントは、様々な講演者、実体験談、そして最高級のアルゼンチン産牛肉の試食を通じて、包括的な体験を提供する」と付け加えた。 運動の観点からは、ルクレシア・マストランジェロ教授が牛肉の栄養価を強調した。「特に運動後には、筋肉の再生を助け、エネルギーを供給し、回復を促進するため、肉を摂取することが非常に重要です。健康的な習慣の一部として取り入れることが鍵となります」。</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">El Instituto de Promoción de la Carne Vacuna Argentina (IPCVA) organizó un nuevo Sunset Ganadero para jóvenes el 16 de abril en la Sociedad Rural de Azul. El lema fue “Carne argentina: historias que inspiran”, con una propuesta innovadora que integró charlas, experiencias y testimonios sobre la producción, la sanidad, la nutrición y el valor cultural de la carne vacuna. La jornada estuvo especialm...</p>
+            </div>
+          </div>
+        </div>
+        <div id="modal-3" class="modal" onclick="closeModal('modal-3')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">アルゼンチンの米国への商談ミッション</h2>
+              <button class="modal-close" onclick="closeModal('modal-3')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/04/29</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/mision-comercial-en-ee-uu-para-exportar-mas-carne-vacuna" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">アルゼンチンの食肉業界は、5月1日までフィラデルフィア、シカゴ、ロサンゼルスを巡る商談ミッション「肉週間」の新シリーズを開始し、米国市場での活動を本格化させた。これは、無関税輸出枠が最近拡大されたことを受け、食肉貿易における3つの戦略的拠点での存在感を強固にすることを目的としている。 日程は本日フィラデルフィアから始まり、現地の港湾視察や官民合同の活動が行われる。これには、アルゼンチン駐米大使のアレック・オクセンフォード氏をはじめ、輸出業者や業界関係者が参加する。 また、米国食肉輸入評議会（MICA）のダナ・エーリック会長やフィラポートのショーン・マホーニー・マーケティング部長に加え、米国の輸入業者も参加し、昼食会、B2B商談会、アルゼンチン産肉やワインの試食を伴うネットワーキングの場が設けられる。</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">La cadena cárnica argentina puso primera en Estados Unidos con el inicio de una nueva edición de la “Semana de la Carne”, una misión comercial que se extenderá hasta el 1 de mayo y que tendrá escalas en Filadelfia, Chicago y Los Ángeles. El objetivo es consolidar la presencia en tres plazas estratégicas para el comercio cárnico tras la reciente ampliación del cupo de exportación sin aranceles. La ...</p>
+            </div>
+          </div>
+        </div>
+        <div id="modal-4" class="modal" onclick="closeModal('modal-4')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">生産者はVISECにどのように登録すればよいですか？</h2>
+              <button class="modal-close" onclick="closeModal('modal-4')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/04/29</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/informacion-importante" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">登録の手順に従ってください。まず、URL「carne.visec.com.ar」にアクセスしてください。「Registrá su empresa（会社の登録）」ボタンをクリックしてください。最初のステップは、会社の主なプロファイルを選択することです。この場合…「PRODUCTOR（生産者）」を選択してください。</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">Siga los pasos para la inscripción: Primero: Ingrese a la dirección: carne.visec.com.ar. Haga clic en el botón: “Registrá su empresa”. El primer paso es elegir el perfil principal de la empresa. En este caso… seleccione: PRODUCTOR.</p>
+            </div>
+          </div>
+        </div>
+        <div id="modal-5" class="modal" onclick="closeModal('modal-5')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">アルゼンチンの牛肉は、輸出拡大を図るため、米国で「アルゼンチン牛肉週間」を開催する</h2>
+              <button class="modal-close" onclick="closeModal('modal-5')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/04/29</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/la-carne-argentina-tendra-su-semana-en-estados-unidos-para-impulsar-exportaciones" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">大統領府事務総長のカリーナ・ミレイ氏は、パブロ・キルノ外相、プロマルティンガのディエゴ・スカーレスカ代表、 国家農業食品市場・国際展開担当次官のアグスティン・テヘダ氏、およびアルゼンチン牛肉振興協会（IPCVA）会長のジョルジュ・ブライシュミット氏と共に実務会議を主宰し、米国における「アルゼンチン牛肉週間」の開催を発表した。これは、輸出を促進し、世界で最も競争の激しい市場の一つにおけるアルゼンチン産牛肉の浸透を深めるための戦略的な貿易ミッションである。 カサ・ロサダで行われたこの会合では、大統領府事務局とアルゼンチン投資・国際貿易促進庁（PromArgentina）が策定した本ミッションの指針が提示された。ミッションは今年4月27日から5月1日にかけて、米国市場の戦略的3都市であるフィラデルフィア、シカゴ、ロサンゼルスで実施される。 この会合には、IPCVAの副会長であるマリオ・ラヴェッティーノ氏、フリゴリフィコ・ゴリーナのCEO兼コンソルシオ・ABCの副会長であるカルロス・リウセック氏、フリゴリフィコ・アレビーフのCEOであるウーゴ・ボレル氏、フリゴリフィコ・リオプラテンセのCEOであるマルティン・コスタンティーニ氏、マルフリグ・アルゼンチナのCEOであるグスタボ・カール氏、ラ・アノニマのCEOであるニコラス・ブラウン氏も出席した。</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">La secretaria general de la Presidencia, Karina Milei, encabezó un encuentro de trabajo junto al canciller, Pablo Quirno; el presidente ejecutivo de PromArgentina, Diego Sucalesca; el subsecretario de Mercados Agroalimentarios e Inserción Internacional de la Nación, Agustin Tejeda; y el presidente del Instituto de Promoción de la Carne Vacuna Argentina (IPCVA), Georges Breitschmitt, para anunciar ...</p>
+            </div>
+          </div>
+        </div>
+        <div id="modal-6" class="modal" onclick="closeModal('modal-6')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">500名以上の生産者が、IPCVA主催の「Jornada a Campo 2026」第1回イベントに参加した</h2>
+              <button class="modal-close" onclick="closeModal('modal-6')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/04/29</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/mas-de-500-productores-participaron-de-la-primera-jornada-a-campo-2026-del-ipcva" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">500名以上の生産者が、IPCVA主催の「Jornada a Campo 2026」第1回イベントに参加した</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">Más de 500 productores participaron de la primera Jornada a Campo 2026 del IPCVA</p>
+            </div>
+          </div>
+        </div>
+  <footer>
+    生成日時: 2026-04-29 / DeepL API による日本語翻訳 / 南米畜産ニュース自動収集システム
+  </footer>
+  <script>
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal.active').forEach(function(m) {
+          m.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+  </script>
+</body>
+</html>

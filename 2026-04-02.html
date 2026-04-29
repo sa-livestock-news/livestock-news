@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>南米畜産ニュース 2026年04月02日</title>
+  <style>
+    :root {
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(0,0,0,0.10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-sans);
+      background: #f0f2f5;
+      color: #1a1a2e;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+    a { color: #1565c0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #1565c0 100%);
+      color: white;
+      padding: 28px 24px 24px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      font-size: clamp(20px, 4vw, 32px);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .header-sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+    .header-stats {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+    .stat-badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .toc {
+      background: white;
+      padding: 14px 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      border-bottom: 1px solid #e0e0e0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .toc-label { font-size: 12px; color: #666; font-weight: 600; }
+    .toc-item {
+      background: #e8eaf6;
+      color: #283593;
+      border-radius: 16px;
+      padding: 4px 12px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .toc-item:hover { background: #c5cae9; text-decoration: none; }
+    .toc-archive {
+      margin-left: auto;
+      background: #e8f5e9;
+      color: #2e7d32;
+      border-radius: 16px;
+      padding: 4px 12px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .toc-archive:hover { background: #c8e6c9; text-decoration: none; }
+    main {
+      max-width: 1100px;
+      margin: 24px auto;
+      padding: 0 16px 40px;
+    }
+    .country-section { margin-bottom: 32px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .country-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 20px;
+      color: white;
+      font-weight: 700;
+    }
+    .country-flag { font-size: 28px; line-height: 1; }
+    .country-name { font-size: 20px; flex: 1; }
+    .country-count { background: rgba(255,255,255,0.25); border-radius: 12px; padding: 2px 10px; font-size: 13px; }
+    .country-body { padding: 16px; border: 1px solid; border-top: none; }
+    .article-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      position: relative;
+    }
+    .article-card:last-child { margin-bottom: 0; }
+    .article-num {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      background: #1a237e;
+      color: white;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .article-source-badge {
+      display: inline-block;
+      background: #e8eaf6;
+      color: #283593;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .article-title-ja {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1a237e;
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+    .article-title-orig {
+      font-size: 13px;
+      font-weight: 400;
+      color: #555;
+      margin-bottom: 10px;
+    }
+    .article-title-orig a { color: #1565c0; }
+    .article-meta {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    .meta-link { color: #1565c0 !important; font-weight: 600; }
+    .keywords { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+    .keyword {
+      background: #fff3e0;
+      color: #e65100;
+      border: 1px solid #ffcc80;
+      border-radius: 12px;
+      padding: 2px 9px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .article-body-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 4px;
+    }
+    @media (max-width: 640px) {
+      .article-body-grid { grid-template-columns: 1fr; }
+    }
+    .body-col {
+      background: #fafafa;
+      border-radius: 6px;
+      padding: 12px;
+      border: 1px solid #e8e8e8;
+    }
+    .body-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #888;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .body-text { font-size: 13px; line-height: 1.7; color: #333; }
+    .body-text.ja { color: #1a1a2e; }
+    .back-link {
+      margin-top: 12px;
+      font-size: 13px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      color: #888;
+      border-top: 1px solid #e0e0e0;
+      background: white;
+      margin-top: 32px;
+    }
+    @media print {
+      .toc { display: none; }
+      .article-card { break-inside: avoid; }
+      body { background: white; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>南米畜産ニュース</h1>
+    <div class="header-sub">2026年04月02日（ブラジル・アルゼンチン・チリ・ウルグアイ）</div>
+    <div class="header-stats">
+      <div class="stat-badge">10件の記事</div>
+      <div class="stat-badge">DeepL APIによる日本語翻訳</div>
+      
+    </div>
+  </header>
+  <nav class="toc">
+    <span class="toc-label">国別ジャンプ:</span>
+    <a href="#country-ブラジル" class="toc-item">ブラジル (1件)</a><a href="#country-アルゼンチン" class="toc-item">アルゼンチン (6件)</a><a href="#country-ウルグアイ" class="toc-item">ウルグアイ (0件)</a><a href="#country-チリ" class="toc-item">チリ (3件)</a>
+    <a href="index.html" class="toc-archive">アーカイブ一覧</a>
+  </nav>
+  <main>
+    
+    <section class="country-section" id="country-ブラジル">
+      <div class="country-header" style="background-color: #009C3B">
+        <span class="country-flag">🇧🇷</span>
+        <span class="country-name">ブラジル</span>
+        <span class="country-count">1件</span>
+      </div>
+      <div class="country-body" style="background-color: #e8f5e9; border-color: #4CAF50">
+        
+        <div class="article-card">
+          <div class="article-num">#1</div>
+          <div class="article-source-badge">EMBRAPA</div>
+          <h3 class="article-title-ja">エンブラパのニュース</h3>
+          <h4 class="article-title-orig">
+            <a href="https://www.embrapa.br/noticias" target="_blank" rel="noopener">Notícias Embrapa</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/04/02</span>
+            <span class="meta-source">EMBRAPA</span>
+            <a href="https://www.embrapa.br/noticias" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+          </div>
+          
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Busque aqui notícias sobre as atividades da Embrapa produzidas por nossas equipes em todo o Brasil Ouacesse a lista completacom todos os resultados</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">ブラジル全土の当機関のチームが作成したエンブラパの活動に関するニュースはこちらで検索してください。すべての検索結果を含む完全なリストをご覧ください。</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+      </div>
+    </section>
+    <section class="country-section" id="country-アルゼンチン">
+      <div class="country-header" style="background-color: #74ACDF">
+        <span class="country-flag">🇦🇷</span>
+        <span class="country-name">アルゼンチン</span>
+        <span class="country-count">6件</span>
+      </div>
+      <div class="country-body" style="background-color: #e3f2fd; border-color: #2196F3">
+        
+        <div class="article-card">
+          <div class="article-num">#2</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja">4月8日：ブエノスアイレス州ボルデナベにおけるIPCVAの現地視察</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/8-de-abril-jornada-a-campo-del-ipcva-en-bordenave-provincia-de-buenos-aires" target="_blank" rel="noopener">8 de abril: Jornada a Campo del IPCVA en Bordenave, Provincia de Buenos Aires</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/04/02</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/8-de-abril-jornada-a-campo-del-ipcva-en-bordenave-provincia-de-buenos-aires" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+          </div>
+          <div class="keywords"><span class="keyword">牛肉</span><span class="keyword">生産</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Este 8 de abril llega una nueva Jornada a Campo del Instituto de Promoción de la Carne Vacuna Argentina (IPCVA). Se realizará en el Establecimiento Cabaña El Campito (RP 76 de acceso a Bordenave, a 5 km de Bordenave, y a 10 Km de 17 de agosto). El encuentro incluirá disertaciones técnicas y dos “paradas” o salidas a campo: “Sainfoin: La leguminosa todoterreno que no empasta y produce donde la alfa...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">4月8日、アルゼンチン牛肉振興協会（IPCVA）主催の新たな「現地視察会」が開催されます。会場はカバニャ・エル・カンピート牧場（ボルデナベ方面への州道76号線沿い、ボルデナベから5km、17デ・アゴストから10kmの地点）です。 本イベントでは、技術講演に加え、2つの「フィールドツアー」が予定されています。「サイフォイン：アルフェルサが育たない場所でも生育し、草地を固めない万能マメ科植物」および「高効率な完全サイクル：市場で高値がつく大型去勢牛の生産方法」です。予定されている講演の一部は以下の通りです。「子牛を増やし、労力を減らす、c</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#3</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja">IPCVA総会：マリオ・ラヴェッティーノ氏が2年間の副会長に再選された</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/asamblea-del-ipcva-mario-ravettino-fue-ratificado-como-vicepresidente-por-dos-anos" target="_blank" rel="noopener">Asamblea del IPCVA: Mario Ravettino fue ratificado como vicepresidente por dos años</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/04/02</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/asamblea-del-ipcva-mario-ravettino-fue-ratificado-como-vicepresidente-por-dos-anos" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+          </div>
+          <div class="keywords"><span class="keyword">牛肉</span><span class="keyword">畜産</span><span class="keyword">農業</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Presidida por Sergio Iraeta, Secretario de Agricultura, Ganadería y Pesca de la Nación, este lunes 30 de marzo de 2026 se llevó a cabo la Asamblea Anual Ordinaria del Instituto de Promoción de la Carne Vacuna Argentina (IPCVA) en la que se aprobó la memoria, el balance y el plan anual operativo. En ese marco, las cámaras de la industria ratificaron a Mario Ravettino (Consorcio ABC) como vicepresid...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">セルヒオ・イラエタ国家農業・畜産・水産大臣の主宰により、2026年3月30日（月）、アルゼンチン牛肉振興協会（IPCVA）の年次総会が開催され、事業報告書、決算報告書、および年間事業計画が承認された。 この席上、業界団体はマリオ・ラヴェッティーノ氏（ABCコンソーシアム）を同協会の副会長として2年間の任期で再選した。「2025年は非常に充実した一年であり、アルゼンチン産牛肉が世界中で再び地位を確立できるよう尽力することができました」と、ジョルジュ・ブライシュミット会長は述べた。</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#4</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja">「カルネ・アルヘンティーナ」が、再び「ウシュアイア・バイ・UTMB」の公式エナジー補給食となります</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/la-carne-argentina-sera-nuevamente-el-combustible-oficial-de-ushuaia-by-utmb" target="_blank" rel="noopener">La Carne Argentina será nuevamente el combustible oficial de Ushuaia by UTMB</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/04/02</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/la-carne-argentina-sera-nuevamente-el-combustible-oficial-de-ushuaia-by-utmb" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+          </div>
+          <div class="keywords"><span class="keyword">牛肉</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Por segunda vez, el Instituto de Promoción de la Carne Vacuna Argentina (IPCVA) desembarcará en Tierra del Fuego para acompañar a los atletas de 43 países que participarán en una de las competencias de trail running más importantes del mundo: Ushuaia Fin del Mundo by UTMB. La competencia, que contará con más de 2.500 participantes, se desarrollará entre el 18 y el 22 de marzo de 2026, con distanci...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">アルゼンチン牛肉振興協会（IPCVA）は、世界で最も重要なトレイルランニング大会の一つである「Ushuaia Fin del Mundo by UTMB」に参加する43カ国の選手たちを応援するため、2度目となるティエラ・デル・フエゴへの訪問を予定しています。 2,500名以上の参加者が集まるこの大会は、2026年3月18日から22日にかけて開催され、12km、22km、32km、50km、85km、100km、そしてノンストップの130kmの各距離が設定されています。 「Ushuaia by UTMB」では、1キロメートルごとに力、持久力、そして決意が求められます。そして、この並外れた挑戦に立...</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#5</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja">IPCVAによるオンライン研修：牛への生殖バイオテクノロジーの応用</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/capacitacion-virtual-del-ipcva-biotecnologias-de-la-reproduccion-aplicadas-al-bovino" target="_blank" rel="noopener">Capacitación virtual del IPCVA: Biotecnologías de la reproducción aplicadas al bovino</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/04/02</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/capacitacion-virtual-del-ipcva-biotecnologias-de-la-reproduccion-aplicadas-al-bovino" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+          </div>
+          <div class="keywords"><span class="keyword">畜産</span><span class="keyword">農業</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">El IPCVA pone en marcha el Curso de Capacitación Virtual “Biotecnologías de la Reproducción aplicadas al Bovino” que será dictado por el Instituto Superior de Enseñanza, Estudios y Extensión Agropecuaria (ISEA-SRA) de manera gratuita. Las inscripciones estarán habilitadas hasta el 17 de Abril de 2026 inclusive. El docente a cargo será elMédico Veterinario Sergio Marcantonio, destacado referente en...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">IPCVAは、農業教育・研究・普及高等研究所（ISEA-SRA）が無料で開講するオンライン研修コース「牛への生殖バイオテクノロジーの応用」を開始します。申込受付は2026年4月17日までです。 講師は、この分野の第一人者である獣医師セルヒオ・マルカントニオ氏が務めます。本コースは無料ですが定員に限りがあり、主に農業・畜産分野の専門家、遺伝的改良に取り組む畜産農家、および...</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#6</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja">IPCVAオンライン講座：「畜産企業のためのExcelを活用した財務・業務管理」</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/curso-virtual-del-ipcva-gestion-financiera-y-operativa-en-excel-para-empresas-ganaderas" target="_blank" rel="noopener">Curso virtual del IPCVA: “Gestión financiera y operativa en Excel para Empresas Ganaderas”</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/04/02</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/curso-virtual-del-ipcva-gestion-financiera-y-operativa-en-excel-para-empresas-ganaderas" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+          </div>
+          <div class="keywords"><span class="keyword">生産</span><span class="keyword">畜産</span><span class="keyword">農業</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">El IPCVA pone en marcha una nueva edición del Programa de Capacitación Virtual“Gestión Financiera y Operativa en Excel para Empresas Ganaderas””, que será dictado por el Instituto Superior de Enseñanza, Estudios y Extensión Agropecuaria (ISEA-SRA) de manera gratuita. Las inscripciones estarán habilitadas hasta el 17 de Abril de 2026 inclusive. El docente a cargo seráMartín Aboaf Petit de Murat, de...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">IPCVAは、農業畜産教育・研究・普及高等研究所（ISEA-SRA）が無料で開講するオンライン研修プログラム「畜産企業のためのExcelを活用した財務・業務管理」の新コースを開始します。申込受付は2026年4月17日までです。 担当講師は、この分野の第一人者であるマルティン・アボアフ・プティ・ド・ムラット氏が務めます。本コースは、主に農業・畜産業の生産者、管理者、および同セクターの企業経営責任者で、組織の改善に関心のある方を対象としています。</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#7</div>
+          <div class="article-source-badge">La Nacion</div>
+          <h3 class="article-title-ja">ビジネスコミュニティ</h3>
+          <h4 class="article-title-orig">
+            <a href="https://www.lanacion.com.ar/tema/comunidad-de-negocios-tid54327/" target="_blank" rel="noopener">Comunidad de Negocios</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/04/02</span>
+            <span class="meta-source">La Nacion</span>
+            <a href="https://www.lanacion.com.ar/tema/comunidad-de-negocios-tid54327/" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+          </div>
+          
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Comunidad de Negocios</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">ビジネスコミュニティ</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+      </div>
+    </section>
+    <section class="country-section" id="country-チリ">
+      <div class="country-header" style="background-color: #D52B1E">
+        <span class="country-flag">🇨🇱</span>
+        <span class="country-name">チリ</span>
+        <span class="country-count">3件</span>
+      </div>
+      <div class="country-body" style="background-color: #ffebee; border-color: #F44336">
+        
+        <div class="article-card">
+          <div class="article-num">#8</div>
+          <div class="article-source-badge">ASPROCER</div>
+          <h3 class="article-title-ja">私たちについて</h3>
+          <h4 class="article-title-orig">
+            <a href="http://www.asprocer.cl/asociacion/quienes-somos/" target="_blank" rel="noopener">Quiénes somos</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/04/02</span>
+            <span class="meta-source">ASPROCER</span>
+            <a href="http://www.asprocer.cl/asociacion/quienes-somos/" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+          </div>
+          
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Quiénes somos</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">私たちについて</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#9</div>
+          <div class="article-source-badge">ASPROCER</div>
+          <h3 class="article-title-ja">豚肉</h3>
+          <h4 class="article-title-orig">
+            <a href="http://www.asprocer.cl/industria/carne-de-cerdo/" target="_blank" rel="noopener">Carne de cerdo</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/04/02</span>
+            <span class="meta-source">ASPROCER</span>
+            <a href="http://www.asprocer.cl/industria/carne-de-cerdo/" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+          </div>
+          <div class="keywords"><span class="keyword">豚肉</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Carne de cerdo</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">豚肉</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#10</div>
+          <div class="article-source-badge">ASPROCER</div>
+          <h3 class="article-title-ja">注目レポート</h3>
+          <h4 class="article-title-orig">
+            <a href="https://www.asprocer.cl/biblioteca/?filtro=default&amp;busqueda=10 pasos para la bioseguridad contra la Peste Porcina Africana" target="_blank" rel="noopener">Informe destacado</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/04/02</span>
+            <span class="meta-source">ASPROCER</span>
+            <a href="https://www.asprocer.cl/biblioteca/?filtro=default&amp;busqueda=10 pasos para la bioseguridad contra la Peste Porcina Africana" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+          </div>
+          
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Informe destacado</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">注目レポート</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    生成日時: 2026-04-02 / DeepL API による日本語翻訳 / 南米畜産ニュース自動収集システム
+  </footer>
+</body>
+</html>
