@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>南米畜産ニュース 2026年05月02日</title>
+  <style>
+    :root {
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(0,0,0,0.10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background: #f0f2f5; color: #1a1a2e; line-height: 1.7; font-size: 15px; }
+    a { color: #1565c0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #1565c0 100%);
+      color: white; padding: 28px 24px 24px; text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    header h1 { font-size: clamp(20px, 4vw, 32px); font-weight: 700; margin-bottom: 6px; }
+    .header-sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+    .header-stats { display: flex; justify-content: center; gap: 20px; margin-top: 14px; flex-wrap: wrap; }
+    .stat-badge {
+      background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 20px; padding: 5px 14px; font-size: 13px; font-weight: 600;
+    }
+    .toc {
+      background: white; padding: 14px 20px; display: flex; gap: 10px;
+      flex-wrap: wrap; align-items: center; border-bottom: 1px solid #e0e0e0;
+      position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .toc-label { font-size: 12px; color: #666; font-weight: 600; }
+    .toc-item {
+      background: #e8eaf6; color: #283593; border-radius: 16px;
+      padding: 4px 12px; font-size: 13px; font-weight: 600;
+    }
+    .toc-item:hover { background: #c5cae9; text-decoration: none; }
+    .toc-archive {
+      margin-left: auto; background: #e8f5e9; color: #2e7d32;
+      border-radius: 16px; padding: 4px 12px; font-size: 13px; font-weight: 600;
+    }
+    .toc-archive:hover { background: #c8e6c9; text-decoration: none; }
+    main { max-width: 1100px; margin: 24px auto; padding: 0 16px 40px; }
+    .country-section { margin-bottom: 32px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .country-header { display: flex; align-items: center; gap: 12px; padding: 14px 20px; color: white; font-weight: 700; }
+    .country-flag { font-size: 28px; line-height: 1; }
+    .country-name { font-size: 20px; flex: 1; }
+    .country-count { background: rgba(255,255,255,0.25); border-radius: 12px; padding: 2px 10px; font-size: 13px; }
+    .country-body { padding: 16px; border: 1px solid; border-top: none; }
+    .article-card {
+      background: white; border-radius: var(--radius); padding: 20px;
+      margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); position: relative;
+    }
+    .article-card:last-child { margin-bottom: 0; }
+    .article-num {
+      position: absolute; top: 12px; right: 14px; background: #1a237e; color: white;
+      border-radius: 50%; width: 28px; height: 28px; display: flex;
+      align-items: center; justify-content: center; font-size: 12px; font-weight: 700;
+    }
+    .article-source-badge {
+      display: inline-block; background: #e8eaf6; color: #283593;
+      border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 700; margin-bottom: 8px;
+    }
+    .article-title-ja {
+      font-size: 17px; font-weight: 700; color: #1a237e; margin-bottom: 6px;
+      line-height: 1.5; cursor: pointer;
+    }
+    .article-title-ja:hover { color: #1565c0; text-decoration: underline; }
+    .article-title-orig { font-size: 13px; font-weight: 400; color: #555; margin-bottom: 10px; }
+    .article-title-orig a { color: #1565c0; }
+    .article-meta {
+      display: flex; gap: 14px; flex-wrap: wrap;
+      font-size: 12px; color: #666; margin-bottom: 10px;
+    }
+    .meta-link { color: #1565c0 !important; font-weight: 600; }
+    .meta-fulltext {
+      color: #e65100 !important; font-weight: 600; cursor: pointer;
+      border: 1px solid #ffcc80; border-radius: 10px; padding: 1px 8px;
+      background: #fff3e0;
+    }
+    .meta-fulltext:hover { background: #ffe0b2; }
+    .keywords { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+    .keyword {
+      background: #fff3e0; color: #e65100; border: 1px solid #ffcc80;
+      border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 600;
+    }
+    .article-body-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 4px; }
+    @media (max-width: 640px) { .article-body-grid { grid-template-columns: 1fr; } }
+    .body-col { background: #fafafa; border-radius: 6px; padding: 12px; border: 1px solid #e8e8e8; }
+    .body-label { font-size: 11px; font-weight: 700; color: #888; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .body-text { font-size: 13px; line-height: 1.7; color: #333; }
+    .body-text.ja { color: #1a1a2e; }
+    .back-link { margin-top: 12px; font-size: 13px; }
+    footer {
+      text-align: center; padding: 20px; font-size: 12px; color: #888;
+      border-top: 1px solid #e0e0e0; background: white; margin-top: 32px;
+    }
+
+    /* モーダル */
+    .modal {
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6); z-index: 1000; overflow-y: auto;
+      padding: 20px;
+    }
+    .modal.active { display: flex; align-items: flex-start; justify-content: center; }
+    .modal-content {
+      background: white; border-radius: 12px; padding: 28px;
+      max-width: 800px; width: 100%; margin: 20px auto;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3); position: relative;
+    }
+    .modal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 16px; }
+    .modal-title { font-size: 20px; font-weight: 700; color: #1a237e; line-height: 1.5; flex: 1; }
+    .modal-close {
+      background: #f5f5f5; border: none; border-radius: 50%; width: 32px; height: 32px;
+      font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; color: #555;
+    }
+    .modal-close:hover { background: #e0e0e0; }
+    .modal-meta { display: flex; gap: 14px; font-size: 13px; color: #666; margin-bottom: 20px; flex-wrap: wrap; }
+    .modal-meta a { color: #1565c0; font-weight: 600; }
+    .modal-section-label { font-size: 11px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .modal-body { background: #f0f4ff; border-radius: 8px; padding: 16px; margin-bottom: 16px; border-left: 4px solid #1565c0; }
+    .modal-orig { background: #fafafa; border-radius: 8px; padding: 16px; border: 1px solid #e8e8e8; }
+    .modal-text { font-size: 14px; line-height: 1.8; color: #1a1a2e; white-space: pre-wrap; }
+    .modal-text.orig { color: #555; }
+
+    @media print {
+      .toc { display: none; }
+      .article-card { break-inside: avoid; }
+      body { background: white; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>南米畜産ニュース</h1>
+    <div class="header-sub">2026年05月02日（ブラジル・アルゼンチン・チリ・ウルグアイ）</div>
+    <div class="header-stats">
+      <div class="stat-badge">5件の記事</div>
+      <div class="stat-badge">DeepL APIによる日本語翻訳</div>
+      
+    </div>
+  </header>
+  <nav class="toc">
+    <span class="toc-label">国別ジャンプ:</span>
+    <a href="#country-ブラジル" class="toc-item">ブラジル (0件)</a><a href="#country-アルゼンチン" class="toc-item">アルゼンチン (5件)</a><a href="#country-ウルグアイ" class="toc-item">ウルグアイ (0件)</a><a href="#country-チリ" class="toc-item">チリ (0件)</a>
+    <a href="index.html" class="toc-archive">アーカイブ一覧</a>
+  </nav>
+  <main>
+    
+    <section class="country-section" id="country-アルゼンチン">
+      <div class="country-header" style="background-color: #74ACDF">
+        <span class="country-flag">🇦🇷</span>
+        <span class="country-name">アルゼンチン</span>
+        <span class="country-count">5件</span>
+      </div>
+      <div class="country-body" style="background-color: #e3f2fd; border-color: #2196F3">
+        
+        <div class="article-card">
+          <div class="article-num">#1</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-1')" title="クリックで全文和訳を表示">「Sial Paris 2024」は、輸出業者にとって非常に重要な見本市です</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/sial-paris-2024-una-feria-muy-destacada-para-los-exportadores" target="_blank" rel="noopener">Sial París 2024, una feria muy destacada para los exportadores</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/05/02</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/sial-paris-2024-una-feria-muy-destacada-para-los-exportadores" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-1')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">輸出</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Sial París 2024, una feria muy destacada para los exportadores</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">「Sial Paris 2024」は、輸出業者にとって非常に重要な見本市です</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#2</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-2')" title="クリックで全文和訳を表示">「ラ・カルネ・アルヘンティーナ」は、アラブ首長国連邦で開催される「ガルフード」見本市で2026年の幕を開ける</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/la-carne-argentina-arranca-el-2026-en-la-feria-gulfood-de-emiratos-arabes-unidos" target="_blank" rel="noopener">La Carne Argentina arranca el 2026 en la feria Gulfood de Emiratos Árabes Unidos</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/05/02</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/la-carne-argentina-arranca-el-2026-en-la-feria-gulfood-de-emiratos-arabes-unidos" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-2')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">食肉</span><span class="keyword">輸出</span><span class="keyword">生産</span><span class="keyword">市場</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Como parte de la estrategia de diversificación de mercados, el Argentine Beef participará nuevamente en la Gulfood, una de las ferias de alimentación más importantes de los países musulmanes que se llevará a cabo entre el 26 y el 30 de enero en Dubái. Se trata de una de las cuatro ferias internacionales en las que participará el Instituto durante el año, eventos en los que también forman parte ent...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">市場多角化戦略の一環として、アルゼンチン・ビーフは、1月26日から30日までドバイで開催される、イスラム諸国における最も重要な食品見本市の一つである「ガルフード」に再び参加する。 これは同協会が今年参加する4つの国際見本市のうちの1つであり、ウルグアイのINAC、ブラジルのABIEC、オーストラリアのMLA、米国食肉輸出連合会（US Meat Export Federation）、英国のAHDB、アイルランドのBord Biaなど、各生産国の同様の団体も参加するイベントです。 「この見本市は我々にとって非常に重要なものです。開催国という理由だけでなく、この地域が年々その地位を固めつつあり、アル...</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#3</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-3')" title="クリックで全文和訳を表示">アルゼンチン産肉：アラブ首長国連邦で開催された「ガルフード」が活況のうちに開幕</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/carne-argentina-arranco-la-gulfood-de-emiratos-arabes-unidos-con-gran-movimiento" target="_blank" rel="noopener">Carne Argentina: arrancó la Gulfood de Emiratos Árabes Unidos con gran movimiento</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/05/02</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/carne-argentina-arranco-la-gulfood-de-emiratos-arabes-unidos-con-gran-movimiento" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-3')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">輸出</span><span class="keyword">認証</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Este lunes 26 de enero comenzó la renovada Gulfood de Emiratos Árabes Unidos, la feria de alimentación más importante de Oriente Medio que, por su ubicación estratégica también convoca a compradores de Europa, África y el Sudeste Asiático. Dado el crecimiento de la muestra, que se extenderá hasta el 30 de enero, este año se realiza en dos grandes predios, en uno de los cuales se luce el Argentine ...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">1月26日（月）、アラブ首長国連邦でリニューアルされた「ガルフード」が開幕した。中東最大の食品見本市である同イベントは、その戦略的な立地から、ヨーロッパ、アフリカ、東南アジアのバイヤーも多数集まっている。 1月30日まで開催される本見本市は規模が拡大したため、今年は2つの大規模な会場で開催されており、そのうちの1つでは、IPCVAが開発した200平方メートルのパビリオンで「アルゼンチン・ビーフ」が華やかに展示されている。そこでは、輸出業者が顧客を招待し、もちろんハラール認証を取得したグリル焼きのアンチョビステーキを試食してもらうことができる。 初日は事業者にとって非常に活気のある一日となりまし...</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#4</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-4')" title="クリックで全文和訳を表示">トライアスロンとバーベキュー：アルゼンチン産牛肉、スポーツの公式エネルギー源</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/triatlon-y-asado-carne-argentina-combustible-oficial-del-deporte" target="_blank" rel="noopener">Triatlón y asado: Carne Argentina, Combustible Oficial del Deporte</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/05/02</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/triatlon-y-asado-carne-argentina-combustible-oficial-del-deporte" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-4')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">牛肉</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Triatlón y asado: Carne Argentina, Combustible Oficial del Deporte</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">トライアスロンとバーベキュー：アルゼンチン産牛肉、スポーツの公式エネルギー源</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#5</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-5')" title="クリックで全文和訳を表示">中国：アルゼンチンの食肉加工業界、高品質な牛肉の新たな販路を開拓</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/china-la-industria-frigorifica-argentina-busca-nuevos-nichos-para-carne-de-calidad" target="_blank" rel="noopener">China: La industria frigorífica argentina busca nuevos nichos para carne de calidad</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/05/02</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/china-la-industria-frigorifica-argentina-busca-nuevos-nichos-para-carne-de-calidad" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-5')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">牛肉</span><span class="keyword">食肉</span><span class="keyword">輸出</span><span class="keyword">輸入</span><span class="keyword">生産</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Entre el 5 y el 10 de noviembre se llevará a cabo en Shanghái la octava edición de la gigantesca China International Import Expo (CIIE). Hasta allí llegará el IPCVA, acompañado por 13 compañías y grupos de productores exportadores, para buscar nuevos negocios. En paralelo, el IPCVA -que financia el estudio de abogados que defiende la postura argentina- realzará las últimas presentaciones en el mar...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">11月5日から10日にかけて、上海で第8回となる大規模な「中国国際輸入博覧会（CIIE）」が開催される。IPCVAは、13社の輸出企業および生産者グループを率いて同博覧会に参加し、新たなビジネスチャンスを模索する予定だ。 これと並行して、アルゼンチンの立場を擁護する法律事務所への資金提供を行っているIPCVAは、中国政府が開始したセーフガード措置のプロセスにおける最新の主張を強調する予定であり、その決定は今月末に下される見込みだ。 ファクンド・セッコ氏（フリゴリフィコ・フォレス・バルトラン）によれば、「中国側はアルゼンチン産品の在庫を確保する意向を持っている。以前ほどの熱意はないかもしれないが...</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+        <div id="modal-1" class="modal" onclick="closeModal('modal-1')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">「Sial Paris 2024」は、輸出業者にとって非常に重要な見本市です</h2>
+              <button class="modal-close" onclick="closeModal('modal-1')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/05/02</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/sial-paris-2024-una-feria-muy-destacada-para-los-exportadores" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">「Sial Paris 2024」は、輸出業者にとって非常に重要な見本市です</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">Sial París 2024, una feria muy destacada para los exportadores</p>
+            </div>
+          </div>
+        </div>
+        <div id="modal-2" class="modal" onclick="closeModal('modal-2')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">「ラ・カルネ・アルヘンティーナ」は、アラブ首長国連邦で開催される「ガルフード」見本市で2026年の幕を開ける</h2>
+              <button class="modal-close" onclick="closeModal('modal-2')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/05/02</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/la-carne-argentina-arranca-el-2026-en-la-feria-gulfood-de-emiratos-arabes-unidos" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">市場多角化戦略の一環として、アルゼンチン・ビーフは、1月26日から30日までドバイで開催される、イスラム諸国における最も重要な食品見本市の一つである「ガルフード」に再び参加する。 これは同協会が今年参加する4つの国際見本市のうちの1つであり、ウルグアイのINAC、ブラジルのABIEC、オーストラリアのMLA、米国食肉輸出連合会（US Meat Export Federation）、英国のAHDB、アイルランドのBord Biaなど、各生産国の同様の団体も参加するイベントです。 「この見本市は我々にとって非常に重要なものです。開催国という理由だけでなく、この地域が年々その地位を固めつつあり、アルゼンチン産牛肉の輸出先を多様化できるからです」と、IPCVAのジョルジュ・ブライシュミット会長は述べた。「この市場ではハラールという宗教的要件が求められますが、アルゼンチンは自国の最も象徴的な製品を提供する準備が整っています」と彼は付け加えた。</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">Como parte de la estrategia de diversificación de mercados, el Argentine Beef participará nuevamente en la Gulfood, una de las ferias de alimentación más importantes de los países musulmanes que se llevará a cabo entre el 26 y el 30 de enero en Dubái. Se trata de una de las cuatro ferias internacionales en las que participará el Instituto durante el año, eventos en los que también forman parte ent...</p>
+            </div>
+          </div>
+        </div>
+        <div id="modal-3" class="modal" onclick="closeModal('modal-3')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">アルゼンチン産肉：アラブ首長国連邦で開催された「ガルフード」が活況のうちに開幕</h2>
+              <button class="modal-close" onclick="closeModal('modal-3')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/05/02</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/carne-argentina-arranco-la-gulfood-de-emiratos-arabes-unidos-con-gran-movimiento" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">1月26日（月）、アラブ首長国連邦でリニューアルされた「ガルフード」が開幕した。中東最大の食品見本市である同イベントは、その戦略的な立地から、ヨーロッパ、アフリカ、東南アジアのバイヤーも多数集まっている。 1月30日まで開催される本見本市は規模が拡大したため、今年は2つの大規模な会場で開催されており、そのうちの1つでは、IPCVAが開発した200平方メートルのパビリオンで「アルゼンチン・ビーフ」が華やかに展示されている。そこでは、輸出業者が顧客を招待し、もちろんハラール認証を取得したグリル焼きのアンチョビステーキを試食してもらうことができる。 初日は事業者にとって非常に活気のある一日となりました。世界中で18億人以上の消費者を抱えるイスラム教徒のバイヤーに加え、中国やヨーロッパからの来場者が例年になく多く見られたからです。</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">Este lunes 26 de enero comenzó la renovada Gulfood de Emiratos Árabes Unidos, la feria de alimentación más importante de Oriente Medio que, por su ubicación estratégica también convoca a compradores de Europa, África y el Sudeste Asiático. Dado el crecimiento de la muestra, que se extenderá hasta el 30 de enero, este año se realiza en dos grandes predios, en uno de los cuales se luce el Argentine ...</p>
+            </div>
+          </div>
+        </div>
+        <div id="modal-4" class="modal" onclick="closeModal('modal-4')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">トライアスロンとバーベキュー：アルゼンチン産牛肉、スポーツの公式エネルギー源</h2>
+              <button class="modal-close" onclick="closeModal('modal-4')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/05/02</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/triatlon-y-asado-carne-argentina-combustible-oficial-del-deporte" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">トライアスロンとバーベキュー：アルゼンチン産牛肉、スポーツの公式エネルギー源</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">Triatlón y asado: Carne Argentina, Combustible Oficial del Deporte</p>
+            </div>
+          </div>
+        </div>
+        <div id="modal-5" class="modal" onclick="closeModal('modal-5')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">中国：アルゼンチンの食肉加工業界、高品質な牛肉の新たな販路を開拓</h2>
+              <button class="modal-close" onclick="closeModal('modal-5')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/05/02</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/china-la-industria-frigorifica-argentina-busca-nuevos-nichos-para-carne-de-calidad" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">11月5日から10日にかけて、上海で第8回となる大規模な「中国国際輸入博覧会（CIIE）」が開催される。IPCVAは、13社の輸出企業および生産者グループを率いて同博覧会に参加し、新たなビジネスチャンスを模索する予定だ。 これと並行して、アルゼンチンの立場を擁護する法律事務所への資金提供を行っているIPCVAは、中国政府が開始したセーフガード措置のプロセスにおける最新の主張を強調する予定であり、その決定は今月末に下される見込みだ。 ファクンド・セッコ氏（フリゴリフィコ・フォレス・バルトラン）によれば、「中国側はアルゼンチン産品の在庫を確保する意向を持っている。以前ほどの熱意はないかもしれないが、価格面では確固たる姿勢を見せている」とのことだ。 価格について、同経営者は「依然として良好な水準にある」としながらも、アルゼンチンは「畜産物の価格が特殊な状況にあり、現在の市場価格水準であっても原材料コストを賄うのが困難な状況にある」と指摘した。 最後に、同氏は、自社が中国向け食肉処理の多角化に着手し、高付加価値の部位というニッチ市場を開拓する考えであることを示した。その理由として、「中国と米国、および米国とブラジルの間の関税情勢が、多くの選択肢を開いている」と述べた。</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">Entre el 5 y el 10 de noviembre se llevará a cabo en Shanghái la octava edición de la gigantesca China International Import Expo (CIIE). Hasta allí llegará el IPCVA, acompañado por 13 compañías y grupos de productores exportadores, para buscar nuevos negocios. En paralelo, el IPCVA -que financia el estudio de abogados que defiende la postura argentina- realzará las últimas presentaciones en el mar...</p>
+            </div>
+          </div>
+        </div>
+  <footer>
+    生成日時: 2026-05-02 / DeepL API による日本語翻訳 / 南米畜産ニュース自動収集システム
+  </footer>
+  <script>
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal.active').forEach(function(m) {
+          m.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+  </script>
+</body>
+</html>

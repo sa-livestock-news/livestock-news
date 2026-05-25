@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>南米畜産ニュース 2026年05月25日</title>
+  <style>
+    :root {
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(0,0,0,0.10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background: #f0f2f5; color: #1a1a2e; line-height: 1.7; font-size: 15px; }
+    a { color: #1565c0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #1565c0 100%);
+      color: white; padding: 28px 24px 24px; text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    header h1 { font-size: clamp(20px, 4vw, 32px); font-weight: 700; margin-bottom: 6px; }
+    .header-sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+    .header-stats { display: flex; justify-content: center; gap: 20px; margin-top: 14px; flex-wrap: wrap; }
+    .stat-badge {
+      background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 20px; padding: 5px 14px; font-size: 13px; font-weight: 600;
+    }
+    .toc {
+      background: white; padding: 14px 20px; display: flex; gap: 10px;
+      flex-wrap: wrap; align-items: center; border-bottom: 1px solid #e0e0e0;
+      position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .toc-label { font-size: 12px; color: #666; font-weight: 600; }
+    .toc-item {
+      background: #e8eaf6; color: #283593; border-radius: 16px;
+      padding: 4px 12px; font-size: 13px; font-weight: 600;
+    }
+    .toc-item:hover { background: #c5cae9; text-decoration: none; }
+    .toc-archive {
+      margin-left: auto; background: #e8f5e9; color: #2e7d32;
+      border-radius: 16px; padding: 4px 12px; font-size: 13px; font-weight: 600;
+    }
+    .toc-archive:hover { background: #c8e6c9; text-decoration: none; }
+    main { max-width: 1100px; margin: 24px auto; padding: 0 16px 40px; }
+    .country-section { margin-bottom: 32px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .country-header { display: flex; align-items: center; gap: 12px; padding: 14px 20px; color: white; font-weight: 700; }
+    .country-flag { font-size: 28px; line-height: 1; }
+    .country-name { font-size: 20px; flex: 1; }
+    .country-count { background: rgba(255,255,255,0.25); border-radius: 12px; padding: 2px 10px; font-size: 13px; }
+    .country-body { padding: 16px; border: 1px solid; border-top: none; }
+    .article-card {
+      background: white; border-radius: var(--radius); padding: 20px;
+      margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); position: relative;
+    }
+    .article-card:last-child { margin-bottom: 0; }
+    .article-num {
+      position: absolute; top: 12px; right: 14px; background: #1a237e; color: white;
+      border-radius: 50%; width: 28px; height: 28px; display: flex;
+      align-items: center; justify-content: center; font-size: 12px; font-weight: 700;
+    }
+    .article-source-badge {
+      display: inline-block; background: #e8eaf6; color: #283593;
+      border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 700; margin-bottom: 8px;
+    }
+    .article-title-ja {
+      font-size: 17px; font-weight: 700; color: #1a237e; margin-bottom: 6px;
+      line-height: 1.5; cursor: pointer;
+    }
+    .article-title-ja:hover { color: #1565c0; text-decoration: underline; }
+    .article-title-orig { font-size: 13px; font-weight: 400; color: #555; margin-bottom: 10px; }
+    .article-title-orig a { color: #1565c0; }
+    .article-meta {
+      display: flex; gap: 14px; flex-wrap: wrap;
+      font-size: 12px; color: #666; margin-bottom: 10px;
+    }
+    .meta-link { color: #1565c0 !important; font-weight: 600; }
+    .meta-fulltext {
+      color: #e65100 !important; font-weight: 600; cursor: pointer;
+      border: 1px solid #ffcc80; border-radius: 10px; padding: 1px 8px;
+      background: #fff3e0;
+    }
+    .meta-fulltext:hover { background: #ffe0b2; }
+    .keywords { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+    .keyword {
+      background: #fff3e0; color: #e65100; border: 1px solid #ffcc80;
+      border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 600;
+    }
+    .article-body-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 4px; }
+    @media (max-width: 640px) { .article-body-grid { grid-template-columns: 1fr; } }
+    .body-col { background: #fafafa; border-radius: 6px; padding: 12px; border: 1px solid #e8e8e8; }
+    .body-label { font-size: 11px; font-weight: 700; color: #888; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .body-text { font-size: 13px; line-height: 1.7; color: #333; }
+    .body-text.ja { color: #1a1a2e; }
+    .back-link { margin-top: 12px; font-size: 13px; }
+    footer {
+      text-align: center; padding: 20px; font-size: 12px; color: #888;
+      border-top: 1px solid #e0e0e0; background: white; margin-top: 32px;
+    }
+
+    /* モーダル */
+    .modal {
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6); z-index: 1000; overflow-y: auto;
+      padding: 20px;
+    }
+    .modal.active { display: flex; align-items: flex-start; justify-content: center; }
+    .modal-content {
+      background: white; border-radius: 12px; padding: 28px;
+      max-width: 800px; width: 100%; margin: 20px auto;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3); position: relative;
+    }
+    .modal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 16px; }
+    .modal-title { font-size: 20px; font-weight: 700; color: #1a237e; line-height: 1.5; flex: 1; }
+    .modal-close {
+      background: #f5f5f5; border: none; border-radius: 50%; width: 32px; height: 32px;
+      font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; color: #555;
+    }
+    .modal-close:hover { background: #e0e0e0; }
+    .modal-meta { display: flex; gap: 14px; font-size: 13px; color: #666; margin-bottom: 20px; flex-wrap: wrap; }
+    .modal-meta a { color: #1565c0; font-weight: 600; }
+    .modal-section-label { font-size: 11px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .modal-body { background: #f0f4ff; border-radius: 8px; padding: 16px; margin-bottom: 16px; border-left: 4px solid #1565c0; }
+    .modal-orig { background: #fafafa; border-radius: 8px; padding: 16px; border: 1px solid #e8e8e8; }
+    .modal-text { font-size: 14px; line-height: 1.8; color: #1a1a2e; white-space: pre-wrap; }
+    .modal-text.orig { color: #555; }
+
+    @media print {
+      .toc { display: none; }
+      .article-card { break-inside: avoid; }
+      body { background: white; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>南米畜産ニュース</h1>
+    <div class="header-sub">2026年05月25日（ブラジル・アルゼンチン・チリ・ウルグアイ）</div>
+    <div class="header-stats">
+      <div class="stat-badge">5件の記事</div>
+      <div class="stat-badge">DeepL APIによる日本語翻訳</div>
+      
+    </div>
+  </header>
+  <nav class="toc">
+    <span class="toc-label">国別ジャンプ:</span>
+    <a href="#country-ブラジル" class="toc-item">ブラジル (0件)</a><a href="#country-アルゼンチン" class="toc-item">アルゼンチン (5件)</a><a href="#country-ウルグアイ" class="toc-item">ウルグアイ (0件)</a><a href="#country-チリ" class="toc-item">チリ (0件)</a>
+    <a href="index.html" class="toc-archive">アーカイブ一覧</a>
+  </nav>
+  <main>
+    
+    <section class="country-section" id="country-アルゼンチン">
+      <div class="country-header" style="background-color: #74ACDF">
+        <span class="country-flag">🇦🇷</span>
+        <span class="country-name">アルゼンチン</span>
+        <span class="country-count">5件</span>
+      </div>
+      <div class="country-body" style="background-color: #e3f2fd; border-color: #2196F3">
+        
+        <div class="article-card">
+          <div class="article-num">#1</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-1')" title="クリックで全文和訳を表示">政府は、越冬用家畜の資産評価に関する減税措置を実施した</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/el-gobierno-nacional-implemento-reduccion-de-impuestos-para-la-valuacion-de-hacienda-de-invernada" target="_blank" rel="noopener">El Gobierno Nacional implementó reducción de impuestos para la valuación de hacienda de invernada</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/05/25</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/el-gobierno-nacional-implemento-reduccion-de-impuestos-para-la-valuacion-de-hacienda-de-invernada" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-1')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">生産</span><span class="keyword">畜産</span><span class="keyword">農業</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">La sanción de la Ley 27.802/2026 efectivizó la posibilidad de hacer un cambio en la valuación de la hacienda de invernada en especial de las categorías de vaquillonas y novillos. La medida alivia la carga impositiva de una producción de largo plazo y tan competitiva como es la ganadería. La Secretaría de Agricultura, Ganadería y Pesca del Ministerio de Economía destacó que las modificaciones en la...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">法律第27.802号（2026年）の成立により、越冬用家畜、特に未経産牛および去勢牛の評価額を変更する可能性が現実のものとなった。この措置は、畜産業のように競争が激しく、かつ長期的な生産活動における税負担を軽減するものである。 経済省農業・畜産・水産局は、連邦政府が可決した労働近代化法（第27.802/2026号）の枠組みに含まれる越冬および／または囲い肥育施設における越冬用家畜の評価額に関する改正が、肥育に従事する畜産農家の収益性にプラスの影響をもたらすことを強調した。 同法第193条の適用において、生産者は年次再評価による推定原価を用いて越冬用家畜の評価額を算定することができる。 雌子牛お...</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#2</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-2')" title="クリックで全文和訳を表示">IPCVAとアンガス社は、生産効率を向上させ、飼料コストを抑えつつより多くの肉量を確保するための遺伝的改良プロジェクトを推進している</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/el-ipcva-y-angus-impulsan-un-proyecto-genetico-para-mejorar-la-eficiencia-y-lograr-mas-carne-con-menor-costo-alimenticio" target="_blank" rel="noopener">El IPCVA y Angus impulsan un proyecto genético para mejorar la eficiencia y lograr más carne con menor costo alimenticio</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/05/25</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/el-ipcva-y-angus-impulsan-un-proyecto-genetico-para-mejorar-la-eficiencia-y-lograr-mas-carne-con-menor-costo-alimenticio" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-2')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">牛肉</span><span class="keyword">食肉</span><span class="keyword">生産</span><span class="keyword">飼料</span><span class="keyword">畜産</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">En el marco de la 83° Expo Angus de Otoño Indoor, la Asociación Argentina de Angus y el Instituto de Promoción de la Carne Vacuna Argentina anunciaron la firma de un acuerdo que reafirma el compromiso de ambas instituciones en el mejoramiento de la cadena de la carne vacuna. La iniciativa apunta a identificar reproductores Angus capaces de producir la misma cantidad de carne utilizando menos alime...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">第83回秋季アンガス室内博覧会において、アルゼンチン・アンガス協会とアルゼンチン牛肉振興協会は、牛肉サプライチェーンの改善に向けた両団体の取り組みを再確認する協定の締結を発表した。 この取り組みは、より少ない飼料で同量の肉を生産できるアンガス種繁殖牛を特定することを目的としており、これは畜産・食肉産業チェーンの将来の競争力にとって、経済的・戦略的に極めて大きな影響を与える特性である。 本プロジェクトは、「アンガス種全国飼料転換効率試験」を通じて実施される。この試験では、代謝柵とスマート給餌器を用いて個体ごとの飼料摂取量を測定し、飼料効率の主要な国際指標の一つであるRFI（Residual Fe...</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#3</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-3')" title="クリックで全文和訳を表示">IPCVAとアンガスは、より少ない飼料でより多くの肉を生産するプロジェクトを推進している</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/el-ipcva-y-angus-avanzan-en-un-proyecto-para-producir-mas-carne-con-menos-alimento" target="_blank" rel="noopener">El IPCVA y Angus avanzan en un proyecto para producir más carne con menos alimento</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/05/25</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/el-ipcva-y-angus-avanzan-en-un-proyecto-para-producir-mas-carne-con-menos-alimento" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-3')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">牛肉</span><span class="keyword">生産</span><span class="keyword">飼料</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">ElInstituto de Promoción de la Carne Vacuna Argentinay laAsociación Argentina de Angusavanzan en la formalización de un convenio de investigación orientado a mejorar la eficiencia productiva de la raza. Javier Martínez del Valle,director Ejecutivo de la Asociación yAgustín Curutchet, responsable del área de genética de Angus junto aAdrián Bifaretti, jefe de Promoción Interna delInstituto de Promoc...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">アルゼンチン牛肉振興協会（IPCVA）とアルゼンチン・アンガス協会は、同品種の生産効率向上を目的とした研究協定の締結に向けて進めている。同協会のハビエル・マルティネス・デル・ヴァッレ事務局長、アンガス協会の遺伝学部門責任者であるアグスティン・クルチェット氏、およびIPCVAの国内プロモーション部長であるアドリアン・ビファレッティ氏は、5月18日から22日までブエノスアイレスの見本市会場「ラ・ルアル」で開催されている「秋のエキスポ」において、この取り組みの詳細について説明した。 （IPCVA）の国内プロモーション部長であるアドリアン・ビファレッティ氏らと共に、5月18日から22日までブエノスアイ...</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#4</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-4')" title="クリックで全文和訳を表示">その他の新着情報</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/el-gobierno-nacional-implemento-reduccion-de-impuestos-para-la-valuacion-de-hacienda-de-invernada" target="_blank" rel="noopener">Otras novedades</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/05/25</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/el-gobierno-nacional-implemento-reduccion-de-impuestos-para-la-valuacion-de-hacienda-de-invernada" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-4')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">生産</span><span class="keyword">畜産</span><span class="keyword">農業</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">La sanción de la Ley 27.802/2026 efectivizó la posibilidad de hacer un cambio en la valuación de la hacienda de invernada en especial de las categorías de vaquillonas y novillos. La medida alivia la carga impositiva de una producción de largo plazo y tan competitiva como es la ganadería. La Secretaría de Agricultura, Ganadería y Pesca del Ministerio de Economía destacó que las modificaciones en la...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">法律第27.802号（2026年）の成立により、越冬用家畜、特に未経産牛および去勢牛の評価額を変更する可能性が現実のものとなった。この措置は、畜産のように競争が激しく、かつ長期にわたる生産活動における税負担を軽減するものである。 経済省農業・畜産・水産局は、連邦政府が可決した労働近代化法（第27.802/2026号）の枠組みに含まれる越冬および／または囲い肥育施設における越冬用家畜の評価額改定が、肥育に従事する畜産農家の収益性にプラスの影響をもたらすことを強調した。 同法第193条の適用において、生産者は年次再評価による推定原価を用いて越冬用家畜の評価額を算定することができる。 雌子牛および去...</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#5</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-5')" title="クリックで全文和訳を表示">政府は、越冬用家畜の資産評価に関する減税措置を実施した。</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/el-gobierno-nacional-implemento-reduccion-de-impuestos-para-la-valuacion-de-hacienda-de-invernada" target="_blank" rel="noopener">El Gobierno Nacional implementó reducción de impuestos para la valuación de hacienda de invernada</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/05/25</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/el-gobierno-nacional-implemento-reduccion-de-impuestos-para-la-valuacion-de-hacienda-de-invernada" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-5')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">生産</span><span class="keyword">畜産</span><span class="keyword">農業</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">La sanción de la Ley 27.802/2026 efectivizó la posibilidad de hacer un cambio en la valuación de la hacienda de invernada en especial de las categorías de vaquillonas y novillos. La medida alivia la carga impositiva de una producción de largo plazo y tan competitiva como es la ganadería. La Secretaría de Agricultura, Ganadería y Pesca del Ministerio de Economía destacó que las modificaciones en la...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">法律第27.802号（2026年）の成立により、越冬用家畜、特に未経産雌牛および去勢雄牛の評価額を変更する可能性が現実のものとなった。この措置は、畜産業のように競争が激しく、かつ長期にわたる生産活動における税負担を軽減するものである。 経済省農業・畜産・水産局は、連邦政府が可決した労働近代化法（第27.802/2026号）の枠組みに含まれる越冬牧場および／または囲い肥育施設における越冬家畜の評価額に関する改正が、肥育に従事する畜産農家の収益性にプラスの影響をもたらすことを強調した。 同法第193条の適用において、生産者は年次再評価による推定原価を用いて越冬用家畜の評価額を算定することができる。...</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+        <div id="modal-1" class="modal" onclick="closeModal('modal-1')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">政府は、越冬用家畜の資産評価に関する減税措置を実施した</h2>
+              <button class="modal-close" onclick="closeModal('modal-1')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/05/25</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/el-gobierno-nacional-implemento-reduccion-de-impuestos-para-la-valuacion-de-hacienda-de-invernada" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">法律第27.802号（2026年）の成立により、越冬用家畜、特に未経産牛および去勢牛の評価額を変更する可能性が現実のものとなった。この措置は、畜産業のように競争が激しく、かつ長期的な生産活動における税負担を軽減するものである。 経済省農業・畜産・水産局は、連邦政府が可決した労働近代化法（第27.802/2026号）の枠組みに含まれる越冬および／または囲い肥育施設における越冬用家畜の評価額に関する改正が、肥育に従事する畜産農家の収益性にプラスの影響をもたらすことを強調した。 同法第193条の適用において、生産者は年次再評価による推定原価を用いて越冬用家畜の評価額を算定することができる。 雌子牛および去勢子牛の評価額の算定にあたり、生産者は法律第23.079号の別表に記載された比率指数を使用することができる。すなわち、すべての雌子牛については1歳から2歳の雌子牛に相当する指数を、すべての去勢子牛については1歳から2歳の去勢子牛に相当する指数を、それぞれの区分に応じて適用する。</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">La sanción de la Ley 27.802/2026 efectivizó la posibilidad de hacer un cambio en la valuación de la hacienda de invernada en especial de las categorías de vaquillonas y novillos. La medida alivia la carga impositiva de una producción de largo plazo y tan competitiva como es la ganadería. La Secretaría de Agricultura, Ganadería y Pesca del Ministerio de Economía destacó que las modificaciones en la...</p>
+            </div>
+          </div>
+        </div>
+        <div id="modal-2" class="modal" onclick="closeModal('modal-2')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">IPCVAとアンガス社は、生産効率を向上させ、飼料コストを抑えつつより多くの肉量を確保するための遺伝的改良プロジェクトを推進している</h2>
+              <button class="modal-close" onclick="closeModal('modal-2')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/05/25</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/el-ipcva-y-angus-impulsan-un-proyecto-genetico-para-mejorar-la-eficiencia-y-lograr-mas-carne-con-menor-costo-alimenticio" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">第83回秋季アンガス室内博覧会において、アルゼンチン・アンガス協会とアルゼンチン牛肉振興協会は、牛肉サプライチェーンの改善に向けた両団体の取り組みを再確認する協定の締結を発表した。 この取り組みは、より少ない飼料で同量の肉を生産できるアンガス種繁殖牛を特定することを目的としており、これは畜産・食肉産業チェーンの将来の競争力にとって、経済的・戦略的に極めて大きな影響を与える特性である。 本プロジェクトは、「アンガス種全国飼料転換効率試験」を通じて実施される。この試験では、代謝柵とスマート給餌器を用いて個体ごとの飼料摂取量を測定し、飼料効率の主要な国際指標の一つであるRFI（Residual Feed Intake：個体残差飼料摂取量）を算出する。</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">En el marco de la 83° Expo Angus de Otoño Indoor, la Asociación Argentina de Angus y el Instituto de Promoción de la Carne Vacuna Argentina anunciaron la firma de un acuerdo que reafirma el compromiso de ambas instituciones en el mejoramiento de la cadena de la carne vacuna. La iniciativa apunta a identificar reproductores Angus capaces de producir la misma cantidad de carne utilizando menos alime...</p>
+            </div>
+          </div>
+        </div>
+        <div id="modal-3" class="modal" onclick="closeModal('modal-3')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">IPCVAとアンガスは、より少ない飼料でより多くの肉を生産するプロジェクトを推進している</h2>
+              <button class="modal-close" onclick="closeModal('modal-3')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/05/25</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/el-ipcva-y-angus-avanzan-en-un-proyecto-para-producir-mas-carne-con-menos-alimento" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">アルゼンチン牛肉振興協会（IPCVA）とアルゼンチン・アンガス協会は、同品種の生産効率向上を目的とした研究協定の締結に向けて進めている。同協会のハビエル・マルティネス・デル・ヴァッレ事務局長、アンガス協会の遺伝学部門責任者であるアグスティン・クルチェット氏、およびIPCVAの国内プロモーション部長であるアドリアン・ビファレッティ氏は、5月18日から22日までブエノスアイレスの見本市会場「ラ・ルアル」で開催されている「秋のエキスポ」において、この取り組みの詳細について説明した。 （IPCVA）の国内プロモーション部長であるアドリアン・ビファレッティ氏らと共に、5月18日から22日までブエノスアイレスの展示会場「ラ・ルラル」で開催されている「秋のエキスポ」において、この取り組みの詳細について説明した。 関係者らが指摘したように、このプロジェクトは同研究所が2年ごとに実施する第10回研究プロジェクト技術審査において選定されたもので、品質、生産性、環境、動物福祉に関連する取り組みに資金を提供する公募である。</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">ElInstituto de Promoción de la Carne Vacuna Argentinay laAsociación Argentina de Angusavanzan en la formalización de un convenio de investigación orientado a mejorar la eficiencia productiva de la raza. Javier Martínez del Valle,director Ejecutivo de la Asociación yAgustín Curutchet, responsable del área de genética de Angus junto aAdrián Bifaretti, jefe de Promoción Interna delInstituto de Promoc...</p>
+            </div>
+          </div>
+        </div>
+        <div id="modal-4" class="modal" onclick="closeModal('modal-4')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">その他の新着情報</h2>
+              <button class="modal-close" onclick="closeModal('modal-4')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/05/25</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/el-gobierno-nacional-implemento-reduccion-de-impuestos-para-la-valuacion-de-hacienda-de-invernada" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">法律第27.802号（2026年）の成立により、越冬用家畜、特に未経産牛および去勢牛の評価額を変更する可能性が現実のものとなった。この措置は、畜産のように競争が激しく、かつ長期にわたる生産活動における税負担を軽減するものである。 経済省農業・畜産・水産局は、連邦政府が可決した労働近代化法（第27.802/2026号）の枠組みに含まれる越冬および／または囲い肥育施設における越冬用家畜の評価額改定が、肥育に従事する畜産農家の収益性にプラスの影響をもたらすことを強調した。 同法第193条の適用において、生産者は年次再評価による推定原価を用いて越冬用家畜の評価額を算定することができる。 雌子牛および去勢雄牛の評価額の算出にあたり、生産者は法律第23.079号の別表に記載された比率指数を使用することができる。すなわち、すべての雌子牛については1歳から2歳の雌子牛に相当する指数を、すべての去勢雄牛については1歳から2歳の去勢雄牛に相当する指数を、それぞれの区分に応じて適用する。</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">La sanción de la Ley 27.802/2026 efectivizó la posibilidad de hacer un cambio en la valuación de la hacienda de invernada en especial de las categorías de vaquillonas y novillos. La medida alivia la carga impositiva de una producción de largo plazo y tan competitiva como es la ganadería. La Secretaría de Agricultura, Ganadería y Pesca del Ministerio de Economía destacó que las modificaciones en la...</p>
+            </div>
+          </div>
+        </div>
+        <div id="modal-5" class="modal" onclick="closeModal('modal-5')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">政府は、越冬用家畜の資産評価に関する減税措置を実施した。</h2>
+              <button class="modal-close" onclick="closeModal('modal-5')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/05/25</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/el-gobierno-nacional-implemento-reduccion-de-impuestos-para-la-valuacion-de-hacienda-de-invernada" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">法律第27.802号（2026年）の成立により、越冬用家畜、特に未経産雌牛および去勢雄牛の評価額を変更する可能性が現実のものとなった。この措置は、畜産業のように競争が激しく、かつ長期にわたる生産活動における税負担を軽減するものである。 経済省農業・畜産・水産局は、連邦政府が可決した労働近代化法（第27.802/2026号）の枠組みに含まれる越冬牧場および／または囲い肥育施設における越冬家畜の評価額に関する改正が、肥育に従事する畜産農家の収益性にプラスの影響をもたらすことを強調した。 同法第193条の適用において、生産者は年次再評価による推定原価を用いて越冬用家畜の評価額を算定することができる。 雌子牛および去勢雄牛の評価額の算出にあたり、生産者は法律第23.079号の別表に記載された比率指数を使用することができる。すなわち、すべての雌子牛については1歳から2歳の雌子牛に相当する指数を、すべての去勢雄牛については1歳から2歳の去勢雄牛に相当する指数を、それぞれの区分に応じて適用する。</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">La sanción de la Ley 27.802/2026 efectivizó la posibilidad de hacer un cambio en la valuación de la hacienda de invernada en especial de las categorías de vaquillonas y novillos. La medida alivia la carga impositiva de una producción de largo plazo y tan competitiva como es la ganadería. La Secretaría de Agricultura, Ganadería y Pesca del Ministerio de Economía destacó que las modificaciones en la...</p>
+            </div>
+          </div>
+        </div>
+  <footer>
+    生成日時: 2026-05-25 / DeepL API による日本語翻訳 / 南米畜産ニュース自動収集システム
+  </footer>
+  <script>
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal.active').forEach(function(m) {
+          m.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+  </script>
+</body>
+</html>

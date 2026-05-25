@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>南米畜産ニュース 2026年05月15日</title>
+  <style>
+    :root {
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(0,0,0,0.10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background: #f0f2f5; color: #1a1a2e; line-height: 1.7; font-size: 15px; }
+    a { color: #1565c0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #1565c0 100%);
+      color: white; padding: 28px 24px 24px; text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    header h1 { font-size: clamp(20px, 4vw, 32px); font-weight: 700; margin-bottom: 6px; }
+    .header-sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+    .header-stats { display: flex; justify-content: center; gap: 20px; margin-top: 14px; flex-wrap: wrap; }
+    .stat-badge {
+      background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 20px; padding: 5px 14px; font-size: 13px; font-weight: 600;
+    }
+    .toc {
+      background: white; padding: 14px 20px; display: flex; gap: 10px;
+      flex-wrap: wrap; align-items: center; border-bottom: 1px solid #e0e0e0;
+      position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .toc-label { font-size: 12px; color: #666; font-weight: 600; }
+    .toc-item {
+      background: #e8eaf6; color: #283593; border-radius: 16px;
+      padding: 4px 12px; font-size: 13px; font-weight: 600;
+    }
+    .toc-item:hover { background: #c5cae9; text-decoration: none; }
+    .toc-archive {
+      margin-left: auto; background: #e8f5e9; color: #2e7d32;
+      border-radius: 16px; padding: 4px 12px; font-size: 13px; font-weight: 600;
+    }
+    .toc-archive:hover { background: #c8e6c9; text-decoration: none; }
+    main { max-width: 1100px; margin: 24px auto; padding: 0 16px 40px; }
+    .country-section { margin-bottom: 32px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .country-header { display: flex; align-items: center; gap: 12px; padding: 14px 20px; color: white; font-weight: 700; }
+    .country-flag { font-size: 28px; line-height: 1; }
+    .country-name { font-size: 20px; flex: 1; }
+    .country-count { background: rgba(255,255,255,0.25); border-radius: 12px; padding: 2px 10px; font-size: 13px; }
+    .country-body { padding: 16px; border: 1px solid; border-top: none; }
+    .article-card {
+      background: white; border-radius: var(--radius); padding: 20px;
+      margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); position: relative;
+    }
+    .article-card:last-child { margin-bottom: 0; }
+    .article-num {
+      position: absolute; top: 12px; right: 14px; background: #1a237e; color: white;
+      border-radius: 50%; width: 28px; height: 28px; display: flex;
+      align-items: center; justify-content: center; font-size: 12px; font-weight: 700;
+    }
+    .article-source-badge {
+      display: inline-block; background: #e8eaf6; color: #283593;
+      border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 700; margin-bottom: 8px;
+    }
+    .article-title-ja {
+      font-size: 17px; font-weight: 700; color: #1a237e; margin-bottom: 6px;
+      line-height: 1.5; cursor: pointer;
+    }
+    .article-title-ja:hover { color: #1565c0; text-decoration: underline; }
+    .article-title-orig { font-size: 13px; font-weight: 400; color: #555; margin-bottom: 10px; }
+    .article-title-orig a { color: #1565c0; }
+    .article-meta {
+      display: flex; gap: 14px; flex-wrap: wrap;
+      font-size: 12px; color: #666; margin-bottom: 10px;
+    }
+    .meta-link { color: #1565c0 !important; font-weight: 600; }
+    .meta-fulltext {
+      color: #e65100 !important; font-weight: 600; cursor: pointer;
+      border: 1px solid #ffcc80; border-radius: 10px; padding: 1px 8px;
+      background: #fff3e0;
+    }
+    .meta-fulltext:hover { background: #ffe0b2; }
+    .keywords { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+    .keyword {
+      background: #fff3e0; color: #e65100; border: 1px solid #ffcc80;
+      border-radius: 12px; padding: 2px 9px; font-size: 11px; font-weight: 600;
+    }
+    .article-body-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 4px; }
+    @media (max-width: 640px) { .article-body-grid { grid-template-columns: 1fr; } }
+    .body-col { background: #fafafa; border-radius: 6px; padding: 12px; border: 1px solid #e8e8e8; }
+    .body-label { font-size: 11px; font-weight: 700; color: #888; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .body-text { font-size: 13px; line-height: 1.7; color: #333; }
+    .body-text.ja { color: #1a1a2e; }
+    .back-link { margin-top: 12px; font-size: 13px; }
+    footer {
+      text-align: center; padding: 20px; font-size: 12px; color: #888;
+      border-top: 1px solid #e0e0e0; background: white; margin-top: 32px;
+    }
+
+    /* モーダル */
+    .modal {
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6); z-index: 1000; overflow-y: auto;
+      padding: 20px;
+    }
+    .modal.active { display: flex; align-items: flex-start; justify-content: center; }
+    .modal-content {
+      background: white; border-radius: 12px; padding: 28px;
+      max-width: 800px; width: 100%; margin: 20px auto;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3); position: relative;
+    }
+    .modal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 16px; }
+    .modal-title { font-size: 20px; font-weight: 700; color: #1a237e; line-height: 1.5; flex: 1; }
+    .modal-close {
+      background: #f5f5f5; border: none; border-radius: 50%; width: 32px; height: 32px;
+      font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; color: #555;
+    }
+    .modal-close:hover { background: #e0e0e0; }
+    .modal-meta { display: flex; gap: 14px; font-size: 13px; color: #666; margin-bottom: 20px; flex-wrap: wrap; }
+    .modal-meta a { color: #1565c0; font-weight: 600; }
+    .modal-section-label { font-size: 11px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .modal-body { background: #f0f4ff; border-radius: 8px; padding: 16px; margin-bottom: 16px; border-left: 4px solid #1565c0; }
+    .modal-orig { background: #fafafa; border-radius: 8px; padding: 16px; border: 1px solid #e8e8e8; }
+    .modal-text { font-size: 14px; line-height: 1.8; color: #1a1a2e; white-space: pre-wrap; }
+    .modal-text.orig { color: #555; }
+
+    @media print {
+      .toc { display: none; }
+      .article-card { break-inside: avoid; }
+      body { background: white; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>南米畜産ニュース</h1>
+    <div class="header-sub">2026年05月15日（ブラジル・アルゼンチン・チリ・ウルグアイ）</div>
+    <div class="header-stats">
+      <div class="stat-badge">6件の記事</div>
+      <div class="stat-badge">DeepL APIによる日本語翻訳</div>
+      
+    </div>
+  </header>
+  <nav class="toc">
+    <span class="toc-label">国別ジャンプ:</span>
+    <a href="#country-ブラジル" class="toc-item">ブラジル (1件)</a><a href="#country-アルゼンチン" class="toc-item">アルゼンチン (5件)</a><a href="#country-ウルグアイ" class="toc-item">ウルグアイ (0件)</a><a href="#country-チリ" class="toc-item">チリ (0件)</a>
+    <a href="index.html" class="toc-archive">アーカイブ一覧</a>
+  </nav>
+  <main>
+    
+    <section class="country-section" id="country-ブラジル">
+      <div class="country-header" style="background-color: #009C3B">
+        <span class="country-flag">🇧🇷</span>
+        <span class="country-name">ブラジル</span>
+        <span class="country-count">1件</span>
+      </div>
+      <div class="country-body" style="background-color: #e8f5e9; border-color: #4CAF50">
+        
+        <div class="article-card">
+          <div class="article-num">#1</div>
+          <div class="article-source-badge">Google News BR（牛肉）</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-1')" title="クリックで全文和訳を表示">中国向け牛肉の部位名称を統一する協定 - Portal DBO</h3>
+          <h4 class="article-title-orig">
+            <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxPTEsxVmFaRG1iN3JobmZRM3ROYmJCc2hTMDJkSGlUSHA2MjBidjQtd3RYbVJXd0hSdE1OeTVEcGV2dWxBcHpFcEpqUVNuNWNDSE1UR2dLbmFMbnFrcGlJYWhlZjRubFNkZm93anZiZ0hsel9UU1JPak1IMTJPQUxFdmo4WlBDcW80d2VGNkxWSHY4UjQ1M1dZS2dvZndQQ0VtdUxVUW9B" target="_blank" rel="noopener">Acordo visa padronizar os nomes dos cortes de carne bovina exportados à China - Portal DBO</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/05/15</span>
+            <span class="meta-source">Google News BR（牛肉）</span>
+            <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxPTEsxVmFaRG1iN3JobmZRM3ROYmJCc2hTMDJkSGlUSHA2MjBidjQtd3RYbVJXd0hSdE1OeTVEcGV2dWxBcHpFcEpqUVNuNWNDSE1UR2dLbmFMbnFrcGlJYWhlZjRubFNkZm93anZiZ0hsel9UU1JPak1IMTJPQUxFdmo4WlBDcW80d2VGNkxWSHY4UjQ1M1dZS2dvZndQQ0VtdUxVUW9B" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-1')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">牛肉</span><span class="keyword">輸出</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Acordo visa padronizar os nomes dos cortes de carne bovina exportados à ChinaPortal DBO</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">中国へ輸出される牛肉の部位名称を統一する協定｜DBOポータル</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+      </div>
+    </section>
+    <section class="country-section" id="country-アルゼンチン">
+      <div class="country-header" style="background-color: #74ACDF">
+        <span class="country-flag">🇦🇷</span>
+        <span class="country-name">アルゼンチン</span>
+        <span class="country-count">5件</span>
+      </div>
+      <div class="country-body" style="background-color: #e3f2fd; border-color: #2196F3">
+        
+        <div class="article-card">
+          <div class="article-num">#2</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-2')" title="クリックで全文和訳を表示">アルゼンチン産牛肉は、Sial 2026への大規模な出展を通じて、中国市場への注力をさらに強化する</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/la-carne-argentina-redobla-su-apuesta-en-china-con-una-fuerte-presencia-en-la-sial-2026" target="_blank" rel="noopener">La carne argentina redobla su apuesta en China con una fuerte presencia en la Sial 2026</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/05/15</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/la-carne-argentina-redobla-su-apuesta-en-china-con-una-fuerte-presencia-en-la-sial-2026" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-2')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">牛肉</span><span class="keyword">市場</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">El Instituto de Promoción de la Carne Vacuna Argentina (IPCVA) participará  en la  nueva edición de la gigantesca Sial China que se llevará a cabo del 18 y el 20 de mayo en Shanghái. Para la participación en esta feria, una de las más importantes del mundo y una de las más relevantes en la agenda internacional de la carne argentina, el IPCVA desarrollará un gran Pabellón Argentine Beef de 1.150 me...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">アルゼンチン牛肉振興協会（IPCVA）は、5月18日から20日まで上海で開催される大規模な展示会「Sial China」の最新回に出展する。 世界有数の規模を誇り、アルゼンチン産牛肉の国際的な活動において極めて重要な位置を占める本見本市への参加にあたり、IPCVAは1,150平方メートルの広大な「アルゼンチン・ビーフ・パビリオン」を設置する。パビリオン内には各企業向けの個別ブースに加え、アルゼンチン産牛肉の試食ができる大型レストランも設けられる。 「中国は依然として数量面で我々の最大の買い手であるため、大きな期待を寄せています」と、IPCVA会長のジョルジュ・ブライシュミット氏は語った。「さら...</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#3</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-3')" title="クリックで全文和訳を表示">世界最大の市場においてアルゼンチン産牛肉の地位を確立するためのIPCVAの戦略</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/la-estrategia-del-ipcva-para-posicionar-la-carne-argentina-en-el-mayor-mercado-del-mundo-1" target="_blank" rel="noopener">La estrategia del IPCVA para posicionar la carne argentina en el mayor mercado del mundo</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/05/15</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/la-estrategia-del-ipcva-para-posicionar-la-carne-argentina-en-el-mayor-mercado-del-mundo-1" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-3')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">牛肉</span><span class="keyword">輸出</span><span class="keyword">輸入</span><span class="keyword">市場</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Desde hace más de una década, el Instituto de Promoción de la Carne Vacuna Argentina (IPCVA) despliega una estrategia sostenida y agresiva para consolidar la presencia de la carne argentina en China, el principal destino de exportación en volumen para el producto nacional más emblemático. La apuesta combina promoción comercial, acciones de marketing y publicidad, presencia institucional y acuerdos...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">10年以上にわたり、アルゼンチン牛肉振興協会（IPCVA）は、同国を代表するこの製品の輸出量において最大の市場である中国において、アルゼンチン産牛肉の存在感を確固たるものにするため、持続的かつ積極的な戦略を展開している。 この取り組みは、商業プロモーション、マーケティングおよび広告活動、機関としての存在感の確立、そして世界で最も競争が激しくダイナミックな市場の一つにおいて「Argentine Beef」ブランドの地位を強化することを目的とした戦略的提携を組み合わせたものです。 この戦略の柱の一つは、中国で開催される主要な食品見本市、特に上海の「SIAL China」や「中国国際輸入博覧会（CI...</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#4</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-4')" title="クリックで全文和訳を表示">森林破壊フリー製品に関する欧州規則の施行まであとわずか：畜産農家はVISEC CARNEプラットフォームで登録が可能</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/cuenta-regresiva-para-la-implementacion-del-reglamento-europeo-sobre-productos-libres-de-deforestacion-productores-ganaderos-pueden-registrarse-en-la-plataforma-visec-carne" target="_blank" rel="noopener">Cuenta regresiva para la implementación del Reglamento Europeo sobre productos libres de deforestación: productores ganaderos pueden registrarse en la plataforma VISEC CARNE</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/05/15</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/cuenta-regresiva-para-la-implementacion-del-reglamento-europeo-sobre-productos-libres-de-deforestacion-productores-ganaderos-pueden-registrarse-en-la-plataforma-visec-carne" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-4')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">牛肉</span><span class="keyword">市場</span><span class="keyword">畜産</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">Aunque el Reglamento (UE) 2023/1115 comenzará a aplicarse a partir del 30 de diciembre de 2026, distintos actores de la cadena de ganados y carne vacuna vienen desarrollando herramientas orientadas a facilitar procesos de trazabilidad y organización de información vinculada a los requerimientos ambientales exigidos por determinados mercados internacionales. En este marco, se encuentra disponible l...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">EU規則（EU）2023/1115は2026年12月30日から適用が開始される予定ですが、畜産・牛肉サプライチェーンの各関係者は、トレーサビリティのプロセスを円滑化し、特定の国際市場が求める環境要件に関連する情報の整理を容易にするためのツールの開発を進めています。 こうした状況下で、VISEC CARNEプラットフォームが利用可能となった。これは、VISEC Asociación Civilの枠組み内で開発された民間イニシアチブであり、畜産に関連するトレーサビリティおよび環境変数に関する情報の登録と処理を容易にすることを目的としている。 なぜ今登録すべきなのか？それは、規則（EU）2023/1...</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#5</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-5')" title="クリックで全文和訳を表示">IPCVAはメンドーサでこの若牛をブラインドテイスティングの審査に臨ませた。消費者の味覚は何を明らかにしたのだろうか？</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/el-ipcva-puso-al-novillo-a-competir-a-ciegas-en-mendoza-que-revelo-el-paladar-de-los-consumidores-1" target="_blank" rel="noopener">El IPCVA puso al novillo a competir a ciegas en Mendoza: ¿Qué reveló el paladar de los consumidores?</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/05/15</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/el-ipcva-puso-al-novillo-a-competir-a-ciegas-en-mendoza-que-revelo-el-paladar-de-los-consumidores-1" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-5')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">消費</span><span class="keyword">市場</span><span class="keyword">畜産</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">El instituto organizó el “Novillo Challenge”, una degustación a ciegas entre carne de novillo y carne de animales más livianos. Se trató de un desafío similar al realizado en su momento entre Coca Cola y Pepsi pero en este caso se trató de una investigación de mercado para ver las preferencias a ciegas del consumidor. El estudio fue diseñado e implementado por Adrian Bifaretti y Tomas Mutti ambos ...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">同研究所は、若牛の肉とより軽い肉とのブラインドテイスティング「ノビージョ・チャレンジ」を開催した。これはかつてコカ・コーラとペプシの間で行われたものと同様の挑戦であったが、今回は消費者の好みをブラインドテストで確認するための市場調査であった。 この調査は、IPCVA（アルゼンチン畜産協会）の国内プロモーション部門に所属するエイドリアン・ビファレッティ氏とトマス・ムッティ氏によって企画・実施され、5月6日から10日にかけてジェネラル・アルベアールで開催された「第45回乾燥地帯畜産全国祭」の枠組みの中で、両氏の監督の下で行われました。 本調査では、アルガロボの薪で「直火焼き」にし、ハリラで風味付け...</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+        <div class="article-card">
+          <div class="article-num">#6</div>
+          <div class="article-source-badge">IPCVA</div>
+          <h3 class="article-title-ja" onclick="openModal('modal-6')" title="クリックで全文和訳を表示">その他の新着情報</h3>
+          <h4 class="article-title-orig">
+            <a href="https://ipcva.com.ar/novedades/la-carne-argentina-redobla-su-apuesta-en-china-con-una-fuerte-presencia-en-la-sial-2026" target="_blank" rel="noopener">Otras novedades</a>
+          </h4>
+          <div class="article-meta">
+            <span class="meta-date">2026/05/15</span>
+            <span class="meta-source">IPCVA</span>
+            <a href="https://ipcva.com.ar/novedades/la-carne-argentina-redobla-su-apuesta-en-china-con-una-fuerte-presencia-en-la-sial-2026" target="_blank" rel="noopener" class="meta-link">元記事を読む</a>
+            <span class="meta-fulltext" onclick="openModal('modal-6')">全文和訳を見る</span>
+          </div>
+          <div class="keywords"><span class="keyword">牛肉</span></div>
+          <div class="article-body-grid">
+            <div class="body-col">
+              <div class="body-label">原文（抜粋）</div>
+              <p class="body-text orig">El Instituto de Promoción de la Carne Vacuna Argentina (IPCVA) participará  en la  nueva edición de la gigantesca Sial China que se llevará a cabo del 18 y el 20 de mayo en Shanghái. Para la participación en esta feria, una de las más importantes del mundo y una de las más relevantes en la agenda internacional de la carne argentina, el IPCVA desarrollará un gran Pabellón Argentine Beef de 1.150 me...</p>
+            </div>
+            <div class="body-col">
+              <div class="body-label">日本語要約</div>
+              <p class="body-text ja">アルゼンチン牛肉振興協会（IPCVA）は、5月18日から20日まで上海で開催される大規模な展示会「Sial China」の最新回に出展する。 世界有数の規模を誇り、アルゼンチン産牛肉の国際的な活動において極めて重要な位置を占める本見本市への参加にあたり、IPCVAは1,150平方メートルの広大な「アルゼンチン・ビーフ・パビリオン」を設置する。パビリオン内には各企業向けの個別ブースに加え、アルゼンチン産牛肉の試食ができる大型レストランも設けられる。 「中国は依然として数量面で我々の最大の買い手であるため、大きな期待を寄せています」と、IPCVAのジョルジュ・ブライシュミット会長は語った。「さらに...</p>
+            </div>
+          </div>
+          <div class="back-link"><a href="index.html">← アーカイブに戻る</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+        <div id="modal-1" class="modal" onclick="closeModal('modal-1')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">中国向け牛肉の部位名称を統一する協定 - Portal DBO</h2>
+              <button class="modal-close" onclick="closeModal('modal-1')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/05/15</span>
+              <span>Google News BR（牛肉）</span>
+              <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxPTEsxVmFaRG1iN3JobmZRM3ROYmJCc2hTMDJkSGlUSHA2MjBidjQtd3RYbVJXd0hSdE1OeTVEcGV2dWxBcHpFcEpqUVNuNWNDSE1UR2dLbmFMbnFrcGlJYWhlZjRubFNkZm93anZiZ0hsel9UU1JPak1IMTJPQUxFdmo4WlBDcW80d2VGNkxWSHY4UjQ1M1dZS2dvZndQQ0VtdUxVUW9B" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">中国へ輸出される牛肉の部位名称を統一する協定｜DBOポータル</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">Acordo visa padronizar os nomes dos cortes de carne bovina exportados à ChinaPortal DBO</p>
+            </div>
+          </div>
+        </div>
+        <div id="modal-2" class="modal" onclick="closeModal('modal-2')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">アルゼンチン産牛肉は、Sial 2026への大規模な出展を通じて、中国市場への注力をさらに強化する</h2>
+              <button class="modal-close" onclick="closeModal('modal-2')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/05/15</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/la-carne-argentina-redobla-su-apuesta-en-china-con-una-fuerte-presencia-en-la-sial-2026" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">アルゼンチン牛肉振興協会（IPCVA）は、5月18日から20日まで上海で開催される大規模な展示会「Sial China」の最新回に出展する。 世界有数の規模を誇り、アルゼンチン産牛肉の国際的な活動において極めて重要な位置を占める本見本市への参加にあたり、IPCVAは1,150平方メートルの広大な「アルゼンチン・ビーフ・パビリオン」を設置する。パビリオン内には各企業向けの個別ブースに加え、アルゼンチン産牛肉の試食ができる大型レストランも設けられる。 「中国は依然として数量面で我々の最大の買い手であるため、大きな期待を寄せています」と、IPCVA会長のジョルジュ・ブライシュミット氏は語った。「さらに今年は、重慶などの他の大都市にもプロモーション活動を拡大し、この広大な国の内陸部でもアルゼンチン産牛肉の地位を確立することで、ビジネスのさらなる成長を図ります」。 「Sial China 2026」においてIPCVAと共に参加する企業は以下の通りです：Arrebeef、Azul Natural Beef、Carne Hereford/Abuelo Julio、Compañía Bernal、Compañía Central Pampeana、Conallison、Ecocarnes、Frigolar、Frigorífico Forres Beltrán、Frigorífico Gorina、Frigorífico Rioplatense、 フリムサ、グルポ・レキオ、インダストリアス・フリゴリフィカス・レクレオ、インダストリアス・フリゴリフィカス・スル、イタルメン・メヌデンシアス、ラ・アノニマ、ログロス、マルフリグ（クイックフード）、オフアル・エクスプ、パノア・ガナデラSRL、ラファエラ・アリメントス、サンタ・ジュリア、トマセロ。</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">El Instituto de Promoción de la Carne Vacuna Argentina (IPCVA) participará  en la  nueva edición de la gigantesca Sial China que se llevará a cabo del 18 y el 20 de mayo en Shanghái. Para la participación en esta feria, una de las más importantes del mundo y una de las más relevantes en la agenda internacional de la carne argentina, el IPCVA desarrollará un gran Pabellón Argentine Beef de 1.150 me...</p>
+            </div>
+          </div>
+        </div>
+        <div id="modal-3" class="modal" onclick="closeModal('modal-3')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">世界最大の市場においてアルゼンチン産牛肉の地位を確立するためのIPCVAの戦略</h2>
+              <button class="modal-close" onclick="closeModal('modal-3')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/05/15</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/la-estrategia-del-ipcva-para-posicionar-la-carne-argentina-en-el-mayor-mercado-del-mundo-1" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">10年以上にわたり、アルゼンチン牛肉振興協会（IPCVA）は、同国を代表するこの製品の輸出量において最大の市場である中国において、アルゼンチン産牛肉の存在感を確固たるものにするため、持続的かつ積極的な戦略を展開している。 この取り組みは、商業プロモーション、マーケティングおよび広告活動、機関としての存在感の確立、そして世界で最も競争が激しくダイナミックな市場の一つにおいて「Argentine Beef」ブランドの地位を強化することを目的とした戦略的提携を組み合わせたものです。 この戦略の柱の一つは、中国で開催される主要な食品見本市、特に上海の「SIAL China」や「中国国際輸入博覧会（CIIE）」への継続的な参加であり、IPCVAはこれらの会場で、輸出用食肉加工業者と共に大規模な機関パビリオンを展開している。</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">Desde hace más de una década, el Instituto de Promoción de la Carne Vacuna Argentina (IPCVA) despliega una estrategia sostenida y agresiva para consolidar la presencia de la carne argentina en China, el principal destino de exportación en volumen para el producto nacional más emblemático. La apuesta combina promoción comercial, acciones de marketing y publicidad, presencia institucional y acuerdos...</p>
+            </div>
+          </div>
+        </div>
+        <div id="modal-4" class="modal" onclick="closeModal('modal-4')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">森林破壊フリー製品に関する欧州規則の施行まであとわずか：畜産農家はVISEC CARNEプラットフォームで登録が可能</h2>
+              <button class="modal-close" onclick="closeModal('modal-4')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/05/15</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/cuenta-regresiva-para-la-implementacion-del-reglamento-europeo-sobre-productos-libres-de-deforestacion-productores-ganaderos-pueden-registrarse-en-la-plataforma-visec-carne" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">EU規則（EU）2023/1115は2026年12月30日から適用が開始される予定ですが、畜産・牛肉サプライチェーンの各関係者は、トレーサビリティのプロセスを円滑化し、特定の国際市場が求める環境要件に関連する情報の整理を容易にするためのツールの開発を進めています。 こうした状況下で、VISEC CARNEプラットフォームが利用可能となった。これは、VISEC Asociación Civilの枠組み内で開発された民間イニシアチブであり、畜産に関連するトレーサビリティおよび環境変数に関する情報の登録と処理を容易にすることを目的としている。 なぜ今登録すべきなのか？それは、規則（EU）2023/1115の対象となる製品を販売する特定の事業者や輸出業者は、動物の原産地および流通チェーンに関わる生産施設について、デューデリジェンスとトレーサビリティの仕組みを導入しなければならないためです。こうした状況下において、トレーサビリティプラットフォームへの早期登録は、生産施設や家畜の移動に関する情報の入力、整理、処理を円滑にする可能性があります。生産者が登録しなかった場合はどうなるのでしょうか？VISEC CARNEプラットフォームの利用は任意です。 ただし、特定の国際市場の要件に応じて、将来的には一部の貿易業者や輸出業者が、トレーサビリティや環境要因に関する追加情報を要求する可能性があります。その結果、この種のツールに登録していない場合、トレーサビリティや生産地に関する情報の整理・検証のために、代替手段の利用が必要になる可能性があります。これはすべての生産者が対象ですか、それとも欧州へ輸出する生産者のみですか？</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">Aunque el Reglamento (UE) 2023/1115 comenzará a aplicarse a partir del 30 de diciembre de 2026, distintos actores de la cadena de ganados y carne vacuna vienen desarrollando herramientas orientadas a facilitar procesos de trazabilidad y organización de información vinculada a los requerimientos ambientales exigidos por determinados mercados internacionales. En este marco, se encuentra disponible l...</p>
+            </div>
+          </div>
+        </div>
+        <div id="modal-5" class="modal" onclick="closeModal('modal-5')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">IPCVAはメンドーサでこの若牛をブラインドテイスティングの審査に臨ませた。消費者の味覚は何を明らかにしたのだろうか？</h2>
+              <button class="modal-close" onclick="closeModal('modal-5')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/05/15</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/el-ipcva-puso-al-novillo-a-competir-a-ciegas-en-mendoza-que-revelo-el-paladar-de-los-consumidores-1" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">同研究所は、若牛の肉とより軽い肉とのブラインドテイスティング「ノビージョ・チャレンジ」を開催した。これはかつてコカ・コーラとペプシの間で行われたものと同様の挑戦であったが、今回は消費者の好みをブラインドテストで確認するための市場調査であった。 この調査は、IPCVA（アルゼンチン畜産協会）の国内プロモーション部門に所属するエイドリアン・ビファレッティ氏とトマス・ムッティ氏によって企画・実施され、5月6日から10日にかけてジェネラル・アルベアールで開催された「第45回乾燥地帯畜産全国祭」の枠組みの中で、両氏の監督の下で行われました。 本調査では、アルガロボの薪で「直火焼き」にし、ハリラで風味付けした、異なるカテゴリーの動物のスペアリブを比較した。</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">El instituto organizó el “Novillo Challenge”, una degustación a ciegas entre carne de novillo y carne de animales más livianos. Se trató de un desafío similar al realizado en su momento entre Coca Cola y Pepsi pero en este caso se trató de una investigación de mercado para ver las preferencias a ciegas del consumidor. El estudio fue diseñado e implementado por Adrian Bifaretti y Tomas Mutti ambos ...</p>
+            </div>
+          </div>
+        </div>
+        <div id="modal-6" class="modal" onclick="closeModal('modal-6')">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+              <h2 class="modal-title">その他の新着情報</h2>
+              <button class="modal-close" onclick="closeModal('modal-6')">&times;</button>
+            </div>
+            <div class="modal-meta">
+              <span>2026/05/15</span>
+              <span>IPCVA</span>
+              <a href="https://ipcva.com.ar/novedades/la-carne-argentina-redobla-su-apuesta-en-china-con-una-fuerte-presencia-en-la-sial-2026" target="_blank" rel="noopener">元記事を読む →</a>
+            </div>
+            <div class="modal-body">
+              <div class="modal-section-label">全文和訳</div>
+              <p class="modal-text">アルゼンチン牛肉振興協会（IPCVA）は、5月18日から20日まで上海で開催される大規模な展示会「Sial China」の最新回に出展する。 世界有数の規模を誇り、アルゼンチン産牛肉の国際的な活動において極めて重要な位置を占める本見本市への参加にあたり、IPCVAは1,150平方メートルの広大な「アルゼンチン・ビーフ・パビリオン」を設置する。パビリオン内には各企業向けの個別ブースに加え、アルゼンチン産牛肉の試食ができる大型レストランも設けられる。 「中国は依然として数量面で我々の最大の買い手であるため、大きな期待を寄せています」と、IPCVAのジョルジュ・ブライシュミット会長は語った。「さらに今年は、重慶などの他の大都市にもプロモーション活動を拡大し、この広大な国の内陸部でもアルゼンチン産牛肉の地位を確立することで、ビジネスのさらなる成長を図ります」。 「Sial China 2026」においてIPCVAと共に参加する企業は以下の通りです：Arrebeef、Azul Natural Beef、Carne Hereford/Abuelo Julio、Compañía Bernal、Compañía Central Pampeana、Conallison、Ecocarnes、Frigolar、Frigorífico Forres Beltrán、Frigorífico Gorina、Frigorífico Rioplatense、 フリムサ、グルポ・レキオ、インダストリアス・フリゴリフィカス・レクレオ、インダストリアス・フリゴリフィカス・スル、イタルメン・メヌデンシアス、ラ・アノニマ、ログロス、マルフリグ（クイックフード）、オフアル・エクスプ、パノア・ガナデラSRL、ラファエラ・アリメントス、サンタ・ジュリア、トマセロ。</p>
+            </div>
+            <div class="modal-orig">
+              <div class="modal-section-label">原文（抜粋）</div>
+              <p class="modal-text orig">El Instituto de Promoción de la Carne Vacuna Argentina (IPCVA) participará  en la  nueva edición de la gigantesca Sial China que se llevará a cabo del 18 y el 20 de mayo en Shanghái. Para la participación en esta feria, una de las más importantes del mundo y una de las más relevantes en la agenda internacional de la carne argentina, el IPCVA desarrollará un gran Pabellón Argentine Beef de 1.150 me...</p>
+            </div>
+          </div>
+        </div>
+  <footer>
+    生成日時: 2026-05-15 / DeepL API による日本語翻訳 / 南米畜産ニュース自動収集システム
+  </footer>
+  <script>
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal.active').forEach(function(m) {
+          m.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
